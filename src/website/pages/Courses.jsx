@@ -16,12 +16,23 @@ export default function Courses() {
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-16">
       {/* Header */}
-      <div className="courses-container">
+      {/* <div className="courses-container">
         <h2 className="heading">Explore Our Industry-Ready Tech Courses</h2>
         <p className="description">
           Welcome to EdTech’s course catalog. Our 6-month, beginner-friendly programs in Data Analytics, SAP, and CAD/CAE are designed to give you practical skills and career-focused training. Learn from industry experts, work on real projects, and build your future—one course at a time.
         </p>
+      </div> */}
+      <div className="header-section">
+        <div className="header-left">
+          <h2 className="course-heading">Explore Our Industry-Ready Tech Courses</h2>
+        </div>
+        <div className="header-right">
+          <p className="course-description">
+            Welcome to EdTech’s course catalog. Our 6-month, beginner-friendly programs in Data Analytics, SAP, and CAD/CAE are designed to give you practical skills and career-focused training. Learn from industry experts, work on real projects, and build your future—one course at a time.
+          </p>
+        </div>
       </div>
+
 
       {/* === Course Card: Data Analytics === */}
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-12">
@@ -32,11 +43,18 @@ export default function Courses() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mb-4">
+        {/* <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mb-4">
           <img src={dataAnalyticsImg} alt="Data Analytics 1" className="course-image" />
           <img src={dataAnalyticsImg1} alt="Data Analytics 2" className="course-image" />
           <img src={dataAnalyticsImg3} alt="Data Analytics 3" className="course-image" />
+        </div> */}
+        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
+          <img src={dataAnalyticsImg} alt="Data Analytics 1" className="custom-course-image" />
+          <img src={dataAnalyticsImg1} alt="Data Analytics 2" className="custom-course-image" />
+          <img src={dataAnalyticsImg3} alt="Data Analytics 3" className="custom-course-image" />
         </div>
+
+
 
         <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-4">
           <span className="bg-gray-200 px-3 py-1 rounded-full">4 Weeks</span>
@@ -52,7 +70,6 @@ export default function Courses() {
               'Excel & Google Sheets for Analysis',
               'SQL for Data Management',
               'Python for Data Science',
-              'Data Visualization with Power BI',
               'Data Visualization with Power BI'
             ].map((item, index) => (
               <div key={index} className="bg-white p-3 rounded shadow text-center">
@@ -64,22 +81,26 @@ export default function Courses() {
         </div> */}
         <div className="curriculum-container">
           <h4 className="curriculum-title">Curriculum</h4>
-          <div className="curriculum-grid">
-            {[
-              'Introduction to Data Analytics',
-              'Excel & Google Sheets for Analysis',
-              'SQL for Data Management',
-              'Python for Data Science',
-              'Data Visualization with Power BI',
-              'Data Visualization with Power BI'
-            ].map((item, index) => (
-              <div key={index} className="curriculum-box">
-                <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
-                <p className="curriculum-text">{item}</p>
-              </div>
-            ))}
+          <div className="curriculum-grid-wrapper">
+            <div className="curriculum-grid">
+              {[
+                'Introduction to Data Analytics',
+                'Excel & Google Sheets for Analysis',
+                'SQL for Data Management',
+                'Python for Data Science',
+                'Data Visualization with Power BI',
+                'Data Visualization with Power BI'
+              ].map((item, index) => (
+                <div key={index} className="curriculum-box">
+                  <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="curriculum-text">{item}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
+
 
       </div>
 
@@ -107,8 +128,27 @@ export default function Courses() {
             View Course
           </button>
         </div>
+        <div className="curriculum-container">
+          <h4 className="curriculum-title">Curriculum</h4>
+          <div className="curriculum-grid-wrapper">
+            <div className="curriculum-grid">
+              {[
+                'Overview of ERP & SAP',
+                'SAP FICO – Financial Accounting',
+                'SAP MM – Materials Management',
+                'SAP SD – Sales & Distribution',
+                'SAP Integration & Reporting'
+              ].map((item, index) => (
+                <div key={index} className="curriculum-box" style={{ width: '190px' }}>
+                  <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="curriculum-text">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-        <div className="mt-4 bg-gray-100 p-4 rounded-lg">
+        {/* <div className="mt-4 bg-gray-100 p-4 rounded-lg">
           <h4 className="text-lg font-semibold text-gray-800 mb-4">Curriculum</h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {[
@@ -124,7 +164,7 @@ export default function Courses() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* === CAD/CAE Card === */}
@@ -154,24 +194,26 @@ export default function Courses() {
           </div>
           <p className="text-sm text-gray-500">By David Brown</p>
         </div>
-
-        <div className="border-t pt-4">
-          <h3 className="text-lg font-semibold mb-4">Curriculum</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 text-center">
-            {[
-              { number: '01', title: '2D Drafting with AutoCAD' },
-              { number: '02', title: '3D Modeling in SolidWorks' },
-              { number: '03', title: 'Structural Analysis with ANSYS' },
-              { number: '04', title: 'Real-world Design Projects' },
-              { number: '05', title: 'Design Validation & Final Presentation' },
-            ].map((item) => (
-              <div key={item.number} className="bg-gray-50 p-4 rounded-lg border">
-                <h4 className="text-orange-500 font-bold text-xl">{item.number}</h4>
-                <p className="text-sm text-gray-700 mt-2">{item.title}</p>
-              </div>
-            ))}
+        <div className="curriculum-container">
+          <h4 className="curriculum-title">Curriculum</h4>
+          <div className="curriculum-grid-wrapper">
+            <div className="curriculum-grid">
+              {[
+                '2D Drafting with AutoCAD',
+                '3D Modeling in SolidWorks',
+                'Structural Analysis with ANSYS',
+                'Real-world Design Projects',
+                'Design Validation & Final Presentation'
+              ].map((item, index) => (
+                <div key={index} className="curriculum-box" style={{ width: '190px' }}>
+                  <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
+                  <p className="curriculum-text">{item}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   );

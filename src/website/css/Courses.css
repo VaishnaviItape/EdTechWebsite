@@ -1,73 +1,167 @@
 /* src/styles/Courses.css */
-.courses-container {
-  padding: 2rem;
-  text-align: center;
-}
-
-.heading {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.description {
-  margin-bottom: 1.5rem;
-  color: #444;
-}
-
-.course-image {
-  width: 33%;
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.curriculum-container {
-  margin-top: 1rem;
-  background-color: #f3f4f6; /* Tailwind's gray-100 */
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-
-.curriculum-title {
-  font-size: 1.125rem; /* Tailwind's text-lg */
-  font-weight: 600;
-  color: #1f2937; /* Tailwind's gray-800 */
-  margin-bottom: 1rem;
-}
-
-.curriculum-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  .curriculum-grid {
-    grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
-  }
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #262626;
+  color: #ffffff;
 }
 
 @media (min-width: 768px) {
-  .curriculum-grid {
-    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
+  .header-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
+.course-heading {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-style: normal; /* SemiBold is 600 */
+  font-size: 38px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #ffffff;
+  margin: 0;
+}
+
+.course-description {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #ffffff;
+  margin: 0;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  flex: 1;
+  color: #4b5563; /* Tailwind gray-600 */
+  font-size: 1rem;
+  line-height: 1.75rem;
+}
+
+.courses-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.custom-course-image {
+  width: 386.67px;
+  height: 326px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.courses-container {
+  padding: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.custom-course-image {
+  width: 386.67px;
+  height: 326px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.curriculum-container {
+    margin-top: 1rem;
+    background-color: #f3f4f6;
+    /* Tailwind gray-100 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+.curriculum-grid-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.curriculum-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    min-width: max-content;
+}
+
 .curriculum-box {
-  background-color: white;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  text-align: center;
+    flex: 0 0 auto;
+    width: 159px;
+    /* adjust card width */
+    background-color: white;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.curriculum-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .curriculum-number {
-  color: #f97316; /* Tailwind's orange-500 */
-  font-weight: bold;
-  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #f97316;
 }
 
 .curriculum-text {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  color: #374151; /* Optional: gray-700 */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #374151; /* Tailwind gray-700 */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
