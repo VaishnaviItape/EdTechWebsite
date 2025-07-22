@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import Logo from '../../images/Logo.png';
 
 export default function Navbar() {
+
+  const location = useLocation();
   return (
     <>
       {/* 🔶 Top Orange Promo Banner */}
@@ -26,7 +29,7 @@ export default function Navbar() {
         <div className="container-fluid">
           {/* 🚀 Logo */}
           <Link className="navbar-brand" to="/">
-            <img src="/logo.png" alt="Logo" style={{ height: '35px' }} />
+            <img src={Logo} alt="Logo" style={{ height: '35px' }} />
           </Link>
 
           {/* 🔀 Toggle for mobile view */}
@@ -46,18 +49,43 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-3">
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/">Home</Link>
+                <Link
+                  className={`nav-link fw-medium px-3 py-2 rounded ${location.pathname === '/' ? 'bg-light fw-semibold' : ''
+                    }`}
+                  to="/"
+                >
+                  Home
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/courses">Courses</Link>
+                <Link
+                  className={`nav-link fw-medium px-3 py-2 rounded ${location.pathname === '/courses' ? 'bg-light fw-semibold' : ''
+                    }`}
+                  to="/courses"
+                >
+                  Courses
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/about">About Us</Link>
+                <Link
+                  className={`nav-link fw-medium px-3 py-2 rounded ${location.pathname === '/about' ? 'bg-light fw-semibold' : ''
+                    }`}
+                  to="/about"
+                >
+                  About Us
+                </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link fw-medium" to="/contact">Contact Us</Link>
+                <Link
+                  className={`nav-link fw-medium px-3 py-2 rounded ${location.pathname === '/contact' ? 'bg-light fw-semibold' : ''
+                    }`}
+                  to="/contact"
+                >
+                  Contact Us
+                </Link>
               </li>
             </ul>
+
 
             {/* 👤 Auth Buttons */}
             <div className="d-flex gap-2">
