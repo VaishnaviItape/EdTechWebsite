@@ -117,7 +117,7 @@ export default function Home() {
 
         {/* Image Section */}
         <div className="col-md-6 text-center">
-          <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '300px' }} />
+          <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
         </div>
       </div>
 
