@@ -32,10 +32,12 @@ export default function Courses() {
           </p>
         </div>
       </div>
+      <hr className="mb-6" />
 
+  
 
       {/* === Course Card: Data Analytics === */}
-      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-12">
+      <div  className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-12">
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-gray-900">Data Analytics</h3>
           <p className="mt-2 text-gray-600 text-sm">
