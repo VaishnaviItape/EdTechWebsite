@@ -10,8 +10,8 @@ import Layout from './website/components/Layout';
 import About from './website/pages/About'
 import Contact from './website/pages/Contact'
 import Courses from './website/pages/Courses'
-import Logins from './website/pages/Login'
-import Register from './website/pages/Register'
+import LoginPage from './website/pages/new-login'
+import SignUpPage from './website/pages/Sign-up'
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/courses" element={<Layout><Courses /></Layout>} />
-        <Route path="/login" element={<Layout><Logins /></Layout>} />
-        <Route path="/register" element={<Layout><Register /></Layout>} />
+        <Route path="/new-login" element={<Layout><LoginPage /></Layout>} />
+        <Route path="/new-register" element={<Layout><SignUpPage /></Layout>} />
 
         {/* Auth pages without layout (optional) */}
         <Route path="/login" element={<Login />} />
