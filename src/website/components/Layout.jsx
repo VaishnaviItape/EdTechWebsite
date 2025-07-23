@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <>
     <div style={{ backgroundColor: '#f3f4f6', minHeight: '100vh' }}>
       <Navbar />
-      <main className="container my-4">{children}</main>
+      <main className="">{children}</main>
       <Footer />
     </div>
     </>

@@ -8,7 +8,7 @@ export default function Dashboard() {
       <Sidebar />
       <div className="flex-grow-1">
         <Header />
-        <div className="p-4">
+        <div className="heading">
           <h2>Welcome to Admin Dashboard</h2>
           <p>This is your main dashboard page.</p>
         </div>

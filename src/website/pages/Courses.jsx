@@ -34,10 +34,10 @@ export default function Courses() {
       </div>
       <hr className="mb-6" />
 
-  
+
 
       {/* === Course Card: Data Analytics === */}
-      <div  className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6 mb-12">
+      <div className="custom-card-container mb-10">
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-gray-900">Data Analytics</h3>
           <p className="mt-2 text-gray-600 text-sm">
@@ -58,11 +58,18 @@ export default function Courses() {
 
 
 
-        <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-4">
+        {/* <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-4">
           <span className="bg-gray-200 px-3 py-1 rounded-full">4 Weeks</span>
           <span className="bg-gray-200 px-3 py-1 rounded-full">Beginner</span>
           <span className="ml-auto text-gray-500">By Sagar</span>
+        </div> */}
+        <div className="course-info-row">
+          <span className="info-pill">4 Weeks</span>
+          <span className="info-pill">Beginner</span>
+          <span className="course-author">By Sagar</span>
+
         </div>
+
 
         {/* <div className="mt-4 bg-gray-100 p-4 rounded-lg">
           <h4 className="text-lg font-semibold text-gray-800 mb-4">Curriculum</h4>
@@ -107,7 +114,7 @@ export default function Courses() {
       </div>
 
       {/* === Course Card: SAP === */}
-      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-6">
+      <div className="custom-card-container mb-10">
         <div className="mb-4">
           <h3 className="text-xl font-semibold text-gray-900">SAP</h3>
           <p className="mt-1 text-gray-600 text-sm">
@@ -116,20 +123,19 @@ export default function Courses() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mb-4">
+        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
           <img src={sapImg1} alt="SAP 1" className="course-image" />
           <img src={sapImg2} alt="SAP 2" className="course-image" />
           <img src={sapImg3} alt="SAP 3" className="course-image" />
         </div>
 
-        <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-4">
-          <span className="bg-gray-200 px-3 py-1 rounded-full">8 Weeks</span>
-          <span className="bg-gray-200 px-3 py-1 rounded-full">Intermediate</span>
-          <span className="ml-auto text-gray-500">By David Brown</span>
-          <button className="ml-4 px-4 py-2 border border-gray-800 text-gray-800 rounded hover:bg-gray-100 text-sm">
-            View Course
-          </button>
+        <div className="course-info-row">
+          <span className="info-pill">8 Weeks</span>
+          <span className="info-pill">Intermediate</span>
+          <span className="course-author">By David Brown</span>
+          <button className="view-course-btn">View Course</button>
         </div>
+
         <div className="curriculum-container">
           <h4 className="curriculum-title">Curriculum</h4>
           <div className="curriculum-grid-wrapper">
@@ -141,7 +147,7 @@ export default function Courses() {
                 'SAP SD – Sales & Distribution',
                 'SAP Integration & Reporting'
               ].map((item, index) => (
-                <div key={index} className="curriculum-box" style={{ width: '190px' }}>
+                <div key={index} className="curriculum-box" style={{ width: '215px' }}>
                   <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
                   <p className="curriculum-text">{item}</p>
                 </div>
@@ -170,7 +176,7 @@ export default function Courses() {
       </div>
 
       {/* === CAD/CAE Card === */}
-      <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md mt-12">
+      <div className="custom-card-container mb-10">
         <div className="flex justify-between items-start mb-4">
           <div>
             <h2 className="text-xl font-semibold">CAD/CAE</h2>
@@ -183,19 +189,24 @@ export default function Courses() {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
           <img src={sapImg4} alt="cad" className="course-image" />
           <img src={sapImg5} alt="solidworks" className="course-image" />
           <img src={sapImg6} alt="ansys" className="course-image" />
         </div>
+        <div className="course-info-row">
+          <span className="info-pill">8 Weeks</span>
+          <span className="info-pill">Intermediate</span>
+          <span className="course-author">By David Brown</span>
+        </div>
 
-        <div className="flex justify-between items-center mb-4">
+        {/* <div className="flex justify-between items-center mb-4">
           <div className="flex gap-2">
             <span className="text-sm bg-gray-100 px-3 py-1 rounded-md">8 Weeks</span>
             <span className="text-sm bg-gray-100 px-3 py-1 rounded-md">Intermediate</span>
           </div>
           <p className="text-sm text-gray-500">By David Brown</p>
-        </div>
+        </div> */}
         <div className="curriculum-container">
           <h4 className="curriculum-title">Curriculum</h4>
           <div className="curriculum-grid-wrapper">
@@ -207,7 +218,7 @@ export default function Courses() {
                 'Real-world Design Projects',
                 'Design Validation & Final Presentation'
               ].map((item, index) => (
-                <div key={index} className="curriculum-box" style={{ width: '190px' }}>
+                <div key={index} className="curriculum-box" style={{ width: '215px' }}>
                   <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
                   <p className="curriculum-text">{item}</p>
                 </div>
