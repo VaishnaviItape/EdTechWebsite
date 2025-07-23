@@ -20,6 +20,7 @@ function App() {
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
         <Route path="/courses" element={<Layout><Courses /></Layout>} />
+        <Route path="/login" element={<Layout><login /></Layout>} />
 
         {/* Auth pages without layout (optional) */}
         <Route path="/login" element={<Login />} />
