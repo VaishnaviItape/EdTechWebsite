@@ -246,3 +246,25 @@
   font-size: 0.85rem;
   color: #333;
 }
+.hero-container {
+  position: relative;
+  width: fit-content;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.ellipse-background {
+  width: 500px;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.girl-image {
+  width: 350px;
+  position: relative;
+  z-index: 1;
+}

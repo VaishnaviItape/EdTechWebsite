@@ -1,5 +1,6 @@
 import React from 'react'; // optional: if you want to move styling here
 import heroImg from '../../images/young-pretty-woman-looking.png';
+import ellipseImg from '../../images/Ellipse 2.png';
 import mobileImg from '../../images/iPhone Space Deep Purple Front 1.png';
 import Avatar from '../../images/Avatar.png';
 import MapSection from '../../images/MAP SECTION.png';
@@ -53,24 +54,24 @@ export default function Home() {
   );
   return (
     <div className="container py-5">
-    <div className="text-center py-5 position-relative overflow-hidden">
-    <h1 className="display-5 fw-bold">
-      Learn Skills That <br /> Get You Hired
-    </h1>
+      <div className="text-center py-5 position-relative overflow-hidden">
+        <h1 className="display-5 fw-bold">
+          Learn Skills That <br /> Get You Hired
+        </h1>
 
-    <div
-      className="d-flex justify-content-center my-3 text-muted fs-6 mx-auto"
-      style={{ maxWidth: '600px' }}
-    >
-      <div className="quote-mark me-2 fs-3">❝</div>
-      <p className="mb-0">
-        Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get
-        certified and land your dream job with expert mentorship and career
-        support.
-      </p>
-    </div>
+        <div
+          className="d-flex justify-content-center my-3 text-muted fs-6 mx-auto"
+          style={{ maxWidth: '600px' }}
+        >
+          <div className="quote-mark me-2 fs-3">❝</div>
+          <p className="mb-0">
+            Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get
+            certified and land your dream job with expert mentorship and career
+            support.
+          </p>
+        </div>
 
-    <div className="position-relative d-flex justify-content-center mt-4">
+        {/* <div className="position-relative d-flex justify-content-center mt-4">
       <div
         className="position-absolute rounded-circle"
         style={{
@@ -92,61 +93,64 @@ export default function Home() {
           zIndex: 1,
         }}
       />
-    </div>
+    </div> */}
+        <div className="hero-container">
+          <img src={ellipseImg} alt="ellipse background" className="ellipse-background" />
+          <img src={heroImg} alt="girl" className="girl-image" />
+        </div>
+        <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+          <button className="btn btn-warning px-4 py-2 rounded-pill">
+            Explore Courses <span>&rarr;</span>
+          </button>
+          <button
+            className="btn btn-outline-light px-4 py-2 rounded-pill text-white"
+            style={{ backgroundColor: '#ff914d', borderColor: 'white' }}
+          >
+            Download Free Syllabus
+          </button>
+        </div>
 
-    <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-      <button className="btn btn-warning px-4 py-2 rounded-pill">
-        Explore Courses <span>&rarr;</span>
-      </button>
-      <button
-        className="btn btn-outline-light px-4 py-2 rounded-pill text-white"
-        style={{ backgroundColor: '#ff914d', borderColor: 'white' }}
-      >
-        Download Free Syllabus
-      </button>
-    </div>
-
-    <div className="d-flex justify-content-center align-items-center mt-4">
-      <div className="text-warning fs-4 me-2">★★★★★</div>
-      <div className="text-start">
-        <h5 className="mb-0 text-white">10 Years</h5>
-        <small className="text-muted">Experience</small>
-      </div>
-    </div>
-  </div>
-<section className="why-section">
-      {/* --- Simplified Learning Section --- */}
-      <div className="row align-items-center flex-column-reverse flex-md-row mt-5">
-        {/* Text Section */}
-        <div className="col-md-6 text-center text-md-start mt-4 mt-md-0">
-          <h1 className="display-4 fw-bold">
-            Your <br /> <span className="text-highlight">Learning,</span> <br /> Simplified
-          </h1>
-          <p className="my-3 text-muted">
-            Live classes, notes, and progress — all in one smart dashboard. <br />
-            No juggling apps or searching for links. Just log in and start learning.
-          </p>
-          <button className="btn btn-warning px-4 py-2 rounded-pill">Get Course Details</button>
-
-          <div className="d-flex align-items-center gap-3 mt-4">
-            <div className="d-flex">
-              <img src="https://i.pravatar.cc/40?img=1" className="rounded-circle me-1" alt="student1" />
-              <img src="https://i.pravatar.cc/40?img=2" className="rounded-circle me-1" alt="student2" />
-              <img src="https://i.pravatar.cc/40?img=3" className="rounded-circle me-1" alt="student3" />
-            </div>
-            <div>
-              <h1 className="mb-0">10,000+ Learners</h1>
-              <small className="text-muted">Trusted across India</small>
-            </div>
+        <div className="d-flex justify-content-center align-items-center mt-4">
+          <div className="text-warning fs-4 me-2">★★★★★</div>
+          <div className="text-start">
+            <h5 className="mb-0 text-white">10 Years</h5>
+            <small className="text-muted">Experience</small>
           </div>
         </div>
-
-        {/* Image Section */}
-        <div className="col-md-6 text-center">
-          <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
-        </div>
       </div>
-</section>
+      <section className="why-section">
+        {/* --- Simplified Learning Section --- */}
+        <div className="row align-items-center flex-column-reverse flex-md-row mt-5">
+          {/* Text Section */}
+          <div className="col-md-6 text-center text-md-start mt-4 mt-md-0">
+            <h1 className="display-4 fw-bold">
+              Your <br /> <span className="text-highlight">Learning,</span> <br /> Simplified
+            </h1>
+            <p className="my-3 text-muted">
+              Live classes, notes, and progress — all in one smart dashboard. <br />
+              No juggling apps or searching for links. Just log in and start learning.
+            </p>
+            <button className="btn btn-warning px-4 py-2 rounded-pill">Get Course Details</button>
+
+            <div className="d-flex align-items-center gap-3 mt-4">
+              <div className="d-flex">
+                <img src="https://i.pravatar.cc/40?img=1" className="rounded-circle me-1" alt="student1" />
+                <img src="https://i.pravatar.cc/40?img=2" className="rounded-circle me-1" alt="student2" />
+                <img src="https://i.pravatar.cc/40?img=3" className="rounded-circle me-1" alt="student3" />
+              </div>
+              <div>
+                <h1 className="mb-0">10,000+ Learners</h1>
+                <small className="text-muted">Trusted across India</small>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="col-md-6 text-center">
+            <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
+          </div>
+        </div>
+      </section>
 
       <section className="why-section">
         <h2>Why You'll Love This Course</h2>
