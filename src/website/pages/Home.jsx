@@ -53,42 +53,68 @@ export default function Home() {
   );
   return (
     <div className="container py-5">
-      <div className="text-center">
-        <h1 className="display-5 fw-bold">
-          Learn Skills That <br /> Get You Hired
-        </h1>
+    <div className="text-center py-5 position-relative overflow-hidden">
+    <h1 className="display-5 fw-bold">
+      Learn Skills That <br /> Get You Hired
+    </h1>
 
-        <div className="d-flex justify-content-center my-3 text-muted fs-6" style={{ maxWidth: '600px', margin: 'auto' }}>
-          <div className="quote-mark me-2 fs-3">❝</div>
-          <p>
-            Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get certified and land your dream job with expert
-            mentorship and career support.
-          </p>
-        </div>
+    <div
+      className="d-flex justify-content-center my-3 text-muted fs-6 mx-auto"
+      style={{ maxWidth: '600px' }}
+    >
+      <div className="quote-mark me-2 fs-3">❝</div>
+      <p className="mb-0">
+        Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get
+        certified and land your dream job with expert mentorship and career
+        support.
+      </p>
+    </div>
 
-        <div className="position-relative d-flex justify-content-center mt-4">
-          <div className="circle-bg"></div>
-          <img src={heroImg} alt="girl" className="girl-img" />
-        </div>
+    <div className="position-relative d-flex justify-content-center mt-4">
+      <div
+        className="position-absolute rounded-circle"
+        style={{
+          width: '500px',
+          height: '300px',
+          backgroundColor: '#FF914D',
+          bottom: '-50px',
+          zIndex: 0,
+          borderRadius:'223px 223px 0px 0px;'
+        }}
+      />
+      <img
+        src={heroImg}
+        alt="girl"
+        className="img-fluid"
+        style={{
+          maxWidth: '350px',
+          position: 'relative',
+          zIndex: 1,
+        }}
+      />
+    </div>
 
-        <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-          <button className="btn btn-warning px-4 py-2 rounded-pill">
-            Explore Courses <span>&rarr;</span>
-          </button>
-          <button className="btn btn-outline-light px-4 py-2 rounded-pill border-white text-white" style={{ backgroundColor: '#ff914d' }}>
-            Download Free Syllabus
-          </button>
-        </div>
+    <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+      <button className="btn btn-warning px-4 py-2 rounded-pill">
+        Explore Courses <span>&rarr;</span>
+      </button>
+      <button
+        className="btn btn-outline-light px-4 py-2 rounded-pill text-white"
+        style={{ backgroundColor: '#ff914d', borderColor: 'white' }}
+      >
+        Download Free Syllabus
+      </button>
+    </div>
 
-        <div className="d-flex justify-content-center align-items-center mt-4">
-          <div className="text-warning fs-4 me-2">★★★★★</div>
-          <div>
-            <h5 className="mb-0">10 Years</h5>
-            <small className="text-muted">Experience</small>
-          </div>
-        </div>
+    <div className="d-flex justify-content-center align-items-center mt-4">
+      <div className="text-warning fs-4 me-2">★★★★★</div>
+      <div className="text-start">
+        <h5 className="mb-0 text-white">10 Years</h5>
+        <small className="text-muted">Experience</small>
       </div>
-
+    </div>
+  </div>
+<section className="why-section">
       {/* --- Simplified Learning Section --- */}
       <div className="row align-items-center flex-column-reverse flex-md-row mt-5">
         {/* Text Section */}
@@ -109,7 +135,7 @@ export default function Home() {
               <img src="https://i.pravatar.cc/40?img=3" className="rounded-circle me-1" alt="student3" />
             </div>
             <div>
-              <h5 className="mb-0">10,000+ Learners</h5>
+              <h1 className="mb-0">10,000+ Learners</h1>
               <small className="text-muted">Trusted across India</small>
             </div>
           </div>
@@ -120,6 +146,7 @@ export default function Home() {
           <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
         </div>
       </div>
+</section>
 
       <section className="why-section">
         <h2>Why You'll Love This Course</h2>
@@ -234,18 +261,6 @@ export default function Home() {
 
       <section className="bg-gray-50 py-12 px-4">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-900">Our Testimonials</h2>
-              <p className="text-gray-500 text-sm mt-2 max-w-md">
-                Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
-              </p>
-            </div>
-            <button className="text-sm font-medium border px-4 py-2 rounded-md border-gray-300 hover:bg-gray-100">
-              View All
-            </button>
-          </div>
 
           {/* Testimonials */}
           <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
@@ -344,7 +359,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section class="bg-light py-5">
+      <section class=" py-5">
         <div class="container">
           {/* <!-- Section Title --> */}
           <div class="mb-4">

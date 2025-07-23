@@ -16,7 +16,7 @@
 
 .why-section {
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 .why-section h2 {
@@ -27,7 +27,7 @@
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -76,7 +76,7 @@
 
 .courses-section {
   padding: 4rem 2rem;
-  background: #fff;
+  /* background: #fff; */
   /* text-align: center; */
 }
 
@@ -195,9 +195,9 @@
 }
 
 .mentors-section {
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
   padding: 4rem 2rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .mentors-title {
