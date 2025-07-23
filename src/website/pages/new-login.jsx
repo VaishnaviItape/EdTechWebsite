@@ -1,85 +1,52 @@
 import React from "react";
-
+// import '../../website/css/Login.css'; // ✅ CSS is imported
 export default function  LoginPage () {
   return (
-    <div style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "100vh",
-      backgroundColor: "#f4f4f4"
-    }}>
-      <div style={{
-        background: "#fff",
-        padding: "40px",
-        borderRadius: "10px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-        width: "350px",
-        textAlign: "center"
-      }}>
-        <h2 style={{
-          marginBottom: "20px",
-          fontSize: "24px",
-          fontWeight: "bold"
-        }}>
-          Login
-        </h2>
-
-        <form>
-          {/* Email */}
-          <div style={{ marginBottom: "15px", textAlign: "left" }}>
-            <label style={{ fontSize: "14px", fontWeight: "500" }}>Email</label>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              style={{
-                width: "100%",
-                padding: "10px",
-                marginTop: "5px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-                fontSize: "14px"
-              }}
-            />
+     <div className="container">
+      <div className="testimonials">
+        <h2>Students Testimonials</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
+          Cras eu sit dignissim lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.
+        </p>
+        <div className="testimonial-card">
+          <p className="testimonial-text">
+            This course made data science so clear. I went from total beginner to getting my first job in 3 months.
+            <br />– highly recommend!
+          </p>
+          <div className="testimonial-footer">
+            <div className="user-info">
+              <img src="https://i.pravatar.cc/40" alt="Anushka" />
+              <div>
+                <h4>Anushka</h4>
+                <p>Data Analyst @ TCS</p>
+              </div>
+            </div>
+            <button className="read-btn">Read Full Story</button>
           </div>
-
-          {/* Password */}
-          <div style={{ marginBottom: "20px", textAlign: "left" }}>
-            <label style={{ fontSize: "14px", fontWeight: "500" }}>Password</label>
-            <input
-              type="password"
-              placeholder="Enter your password"
-              style={{
-                width: "100%",
-                padding: "10px",
-                marginTop: "5px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-                fontSize: "14px"
-              }}
-            />
+          <div className="arrows">
+            <button>&larr;</button>
+            <button>&rarr;</button>
           </div>
+        </div>
+      </div>
 
-          {/* Button */}
-          <button
-            type="submit"
-            style={{
-              width: "100%",
-              background: "#007bff",
-              color: "#fff",
-              border: "none",
-              padding: "12px",
-              borderRadius: "5px",
-              fontSize: "16px",
-              cursor: "pointer"
-            }}
-          >
-            Login
-          </button>
-        </form>
-
-        <p style={{ marginTop: "15px", fontSize: "14px" }}>
-          Don’t have an account? <a href="/register">Register</a>
+      <div className="login-form">
+        <h2>Login</h2>
+        <p>Welcome back! Please log in to access your account.</p>
+        <input type="email" placeholder="Enter your Email" />
+        <input type="password" placeholder="Enter your Password" />
+        <div className="login-options">
+          <label>
+            <input type="checkbox" /> Remember Me
+          </label>
+          <a href="/">Forgot Password?</a>
+        </div>
+        <button className="login-btn">Login</button>
+        <div className="divider">OR</div>
+        <button className="google-login">Login with Google</button>
+        <p className="signup-link">
+          Don't have an account? <a href="/">Sign Up</a>
         </p>
       </div>
     </div>

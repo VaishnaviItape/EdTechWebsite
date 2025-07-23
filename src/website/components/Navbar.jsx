@@ -89,8 +89,8 @@ export default function Navbar() {
 
             {/* 👤 Auth Buttons */}
             <div className="d-flex gap-2">
-              <Link to="/register" className="btn btn-outline-dark px-3">Sign Up</Link>
-              <Link to="/login" className="btn text-white px-3" style={{ backgroundColor: '#f97316' }}>
+              <Link to="/new-register" className="btn btn-outline-dark px-3">Sign Up</Link>
+              <Link to="/new-login" className="btn text-white px-3" style={{ backgroundColor: '#f97316' }}>
                 Login
               </Link>
             </div>
