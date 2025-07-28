@@ -43,12 +43,12 @@ export default function ViewCourses() {
                 {/* Month 1 */}
                 <div className="col-md-6">
                     <div className="month-card p-3 shadow-sm rounded border">
-                        <h5 className="text-orange fw-bold">02</h5>
-                        <p className="fw-bold">SQL for Data Handling</p>
+                        <h5 className="text-orange fw-bold">01</h5>
+                        <p className="fw-bold">Introduction to Data Analytics & Excel Skills</p>
                         <ul className="list-unstyled small">
-                            <li>Descriptive Statistics in Excel <span className="text-muted">Core Lesson</span></li>
-                            <li>Working with Large Datasets <span className="text-muted">Hands-On</span></li>
-                            <li>Advanced Excel Features <span className="text-muted">Practice Session</span></li>
+                            <li>What is Data Analytics? & Career Paths<span className="text-muted">Core Lesson</span></li>
+                            <li>Excel Basics – Formulas, Tables, Charts <span className="text-muted">Hands-On</span></li>
+                             <li>Data Cleaning & Sorting Techniques <span className="text-muted">Practice Session</span></li>
                             <li>Mini Project – Marketing Campaign Analysis <span className="text-muted">Project</span></li>
                         </ul>
 
@@ -88,12 +88,38 @@ export default function ViewCourses() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">04</h5>
-                        <p className="fw-bold">Data Visualization & Storytelling</p>
+                        <p className="fw-bold">Python for Data Analysis</p>
                         <ul className="list-unstyled small">
-                            <li>Principles of Data Visualization <span className="text-muted">Core Lesson</span></li>
+                            <li>Python Basics for Analysts<span className="text-muted">Core Lesson</span></li>
                             <li>Using Tableau or Power BI <span className="text-muted">Hands-On</span></li>
                             <li>Building Interactive Dashboards <span className="text-muted">Practice Session</span></li>
                             <li>Mini Project - Business KPI Dashboard <span className="text-muted">Project</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div className="col-md-6 ">
+                    <div className="month-card p-3 shadow-sm rounded border">
+                        <h5 className="text-orange fw-bold">05</h5>
+                        <p className="fw-bold">Python for Data Analysis</p>
+                        <ul className="list-unstyled small">
+                            <li>Principles of Data Visualization <span className="text-muted">Core Lesson</span></li>
+                            <li>Data Manipulation with Pandas <span className="text-muted">Hands-On</span></li>
+                            <li>Working with Real-World Datasets<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Retail Data Analysis <span className="text-muted">Project</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                 <div className="col-md-6 ">
+                    <div className="month-card p-3 shadow-sm rounded border">
+                        <h5 className="text-orange fw-bold">06</h5>
+                        <p className="fw-bold">Capstone Project & Career Preparation</p>
+                        <ul className="list-unstyled small">
+                            <li>Project Planning & Data Sourcing<span className="text-muted">Core Lesson</span></li>
+                            <li>Project Planning & Data Sourcing <span className="text-muted">Hands-On</span></li>
+                            <li>Analysis, Visualization & Storytelling <span className="text-muted">Practice Session</span></li>
+                            <li>Presentation & Portfolio Building<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>

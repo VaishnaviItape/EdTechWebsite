@@ -19,6 +19,12 @@ export default function Courses() {
   const handleViewCourse = () => {
     navigate('/view-course'); // navigate to the ViewCourses page
   };
+  const handleViewCourse1 = () => {
+    navigate('/view-coursesap'); // navigate to the ViewCourses page
+  };
+    const handleViewCourse2 = () => {
+    navigate('/view-coursescda'); // navigate to the ViewCourses page
+  };
 
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-16">
@@ -50,7 +56,7 @@ export default function Courses() {
           <p className="mt-2 text-gray-600 text-sm">
             Learn to collect, clean, and analyze data using tools like Excel, SQL, Python, and Power BI. Gain practical skills for business intelligence and data-driven decision making.
           </p>
-           <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
+
         </div>
 
         {/* <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mb-4">
@@ -66,15 +72,12 @@ export default function Courses() {
 
 
 
-        {/* <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 mb-4">
-          <span className="bg-gray-200 px-3 py-1 rounded-full">4 Weeks</span>
-          <span className="bg-gray-200 px-3 py-1 rounded-full">Beginner</span>
-          <span className="ml-auto text-gray-500">By Sagar</span>
-        </div> */}
+      
         <div className="course-info-row">
           <span className="info-pill">4 Weeks</span>
           <span className="info-pill">Beginner</span>
           <span className="course-author">By Sagar</span>
+           <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
         </div>
 
 
@@ -140,7 +143,7 @@ export default function Courses() {
           <span className="info-pill">8 Weeks</span>
           <span className="info-pill">Intermediate</span>
           <span className="course-author">By David Brown</span>
-          <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
+          <button className="view-course-btn" onClick={handleViewCourse1}>View Course</button>
         </div>
 
         <div className="curriculum-container">
@@ -191,9 +194,6 @@ export default function Courses() {
               Design and simulate engineering projects using AutoCAD, SolidWorks, and ANSYS. Ideal for mechanical, civil, and structural engineering aspirants.
             </p>
           </div>
-          <button className="px-4 py-1 text-sm border border-gray-400 rounded-md hover:bg-gray-100">
-            View Course
-          </button>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
@@ -201,10 +201,13 @@ export default function Courses() {
           <img src={sapImg5} alt="solidworks" className="course-image" />
           <img src={sapImg6} alt="ansys" className="course-image" />
         </div>
+
+          
         <div className="course-info-row">
           <span className="info-pill">8 Weeks</span>
           <span className="info-pill">Intermediate</span>
           <span className="course-author">By David Brown</span>
+           <button className="view-course-btn" onClick={handleViewCourse2}>View Course</button>
         </div>
 
         {/* <div className="flex justify-between items-center mb-4">

@@ -13,6 +13,8 @@ import Courses from './website/pages/Courses'
 import LoginPage from './website/pages/new-login'
 import SignUpPage from './website/pages/Sign-up'
 import ViewCourses from './website/pages/ViewCourses';
+import ViewCoursessap from './website/pages/ViewCoursessap';
+import ViewCoursescda from './website/pages/ViewCoursescda';
 function App() {
   return (
     <Router>
@@ -25,6 +27,8 @@ function App() {
         <Route path="/new-login" element={<Layout><LoginPage /></Layout>} />
         <Route path="/new-register" element={<Layout><SignUpPage /></Layout>} />
         <Route path="/view-course" element={<ViewCourses />} />
+          <Route path="/view-coursesap" element={<ViewCoursessap />} />
+              <Route path="/view-coursescda" element={<ViewCoursescda />} />
         {/* Auth pages without layout (optional) */}
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />

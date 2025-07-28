@@ -4,6 +4,9 @@ import ellipseImg from '../../images/Ellipse 2.png';
 import mobileImg from '../../images/iPhone Space Deep Purple Front 1.png';
 import Avatar from '../../images/Avatar.png';
 import MapSection from '../../images/MAP SECTION.png';
+import leftImg1 from "../../images/one app 1.png";
+import leftImg2 from "../../images/secure payment 1.png";
+import rightImg from "../../images/Component 6 1.png";
 import { useState } from 'react';
 import '../css/Home.css';
 export default function Home() {
@@ -94,11 +97,26 @@ export default function Home() {
         }}
       />
     </div> */}
+        {/* <div className="hero-container">
+          <img src={ellipseImg} alt="ellipse background" className="ellipse-background" />
+          <img src={heroImg} alt="girl" className="girl-image" />
+        </div> */}
         <div className="hero-container">
           <img src={ellipseImg} alt="ellipse background" className="ellipse-background" />
           <img src={heroImg} alt="girl" className="girl-image" />
+
+          <div className="hero-buttons">
+            <button className="explore-btn">
+              Explore Courses <span>&rarr;</span>
+            </button>
+            <button className="download-btn">
+              Download Free Syllabus
+            </button>
+          </div>
         </div>
-        <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+
+
+        {/* <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
           <button className="btn btn-warning px-4 py-2 rounded-pill">
             Explore Courses <span>&rarr;</span>
           </button>
@@ -108,7 +126,7 @@ export default function Home() {
           >
             Download Free Syllabus
           </button>
-        </div>
+        </div> */}
 
         <div className="d-flex justify-content-center align-items-center mt-4">
           <div className="text-warning fs-4 me-2">★★★★★</div>
@@ -146,9 +164,16 @@ export default function Home() {
           </div>
 
           {/* Image Section */}
-          <div className="col-md-6 text-center">
+         <div className="col-md-6 text-center hover-container">
+      <img src={mobileImg} alt="mobile dashboard" className="main-image img-fluid" />
+
+      <img src={leftImg1} alt="left image 1" className="side-image left-image one" />
+      <img src={leftImg2} alt="left image 2" className="side-image left-image two" />
+      <img src={rightImg} alt="right image" className="side-image right-image" />
+    </div>
+          {/* <div className="col-md-6 text-center">
             <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
-          </div>
+          </div> */}
         </div>
       </section>
 

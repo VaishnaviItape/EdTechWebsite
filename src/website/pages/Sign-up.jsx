@@ -1,8 +1,8 @@
 import React from "react";
-// import '../../website/css/Login.css'; // ✅ CSS is imported
+import '../../website/css/Login.css'; // ✅ CSS is imported
 const SignUpPage = () => {
   return (
-      <div className="container">
+      <div className="containercss">
       <div className="testimonials">
         <h2>Students Testimonials</h2>
         <p>
@@ -32,7 +32,7 @@ const SignUpPage = () => {
       </div>
 
       <div className="login-form">
-        <h2>Login</h2>
+        <h2>Sign Up</h2>
         <p>Welcome back! Please log in to access your account.</p>
         <input type="email" placeholder="Enter your Email" />
         <input type="password" placeholder="Enter your Password" />
