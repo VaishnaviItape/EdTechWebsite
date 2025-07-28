@@ -2,6 +2,12 @@
 import React from 'react';
 import '../../website/css/Contact.css'; // ✅ CSS is imported
 import MapSection from '../../images/MAP SECTION.png';
+import student1 from '../../images/student (1).png';
+import student2 from '../../images/student (2).png';
+import student3 from '../../images/student (3).png';
+import student4 from '../../images/student (4).png';
+import student5 from '../../images/student (5).png';
+
 export default function Contact() {
   return (
     <div className="container py-5">
@@ -82,9 +88,17 @@ export default function Contact() {
             </div>
 
             {/* Image Column */}
-            <div className="col-lg-6 text-center">
-              <img src={MapSection} alt="India Map" className="img-fluid" />
+            <div className="col-lg-6 text-center map-container">
+              <img src={MapSection} alt="India Map" className="img-fluid default-img" />
+
+              {/* Student images */}
+              <img src={student1} alt="student1" className="student-img student1" />
+              <img src={student2} alt="student2" className="student-img student2" />
+              <img src={student3} alt="student3" className="student-img student3" />
+              <img src={student4} alt="student4" className="student-img student4" />
+              <img src={student5} alt="student5" className="student-img student5" />
             </div>
+
           </div>
         </div>
       </section>

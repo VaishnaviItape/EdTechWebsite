@@ -60,3 +60,97 @@
 .contact-card-wrapper {
     margin-bottom: 3rem;
 }
+
+.map-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover transition between map images */
+.default-img,
+.hover-img {
+  transition: opacity 0.3s ease;
+}
+
+.hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.map-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+
+/* .map-container {
+  position: relative;
+  display: inline-block;
+} */
+
+/* Default map image stays visible always */
+.default-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+/* Student images initially hidden and positioned absolutely */
+.student-img {
+  position: absolute;
+  width: 211.24px;
+  height: 214.08px;
+  opacity: 0;
+  z-index: 2;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Slide from left */
+.student1,
+.student5 {
+  transform: translateX(-50px);
+}
+
+/* Slide from right */
+.student2,
+.student3,
+.student4 {
+  transform: translateX(50px);
+}
+
+/* On hover: reveal and animate to original position */
+.map-container:hover .student-img {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Position each student */
+.student1 {
+  top: 38px;
+  left: 95px;
+}
+
+.student2 {
+  top: 219px;
+  left: -2px;
+}
+
+.student3 {
+  top: 281px;
+  left: 73px;
+}
+
+.student4 {
+  top: 410px;
+  left: 126px;
+}
+
+.student5 {
+  top: 260px;
+  left: 223px;
+}
