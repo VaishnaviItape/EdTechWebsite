@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-
+import '../../website/css/Footer.css'; 
 export default function Footer() {
   return (
     <footer className="bg-white text-dark pt-5 border-top">
@@ -9,7 +9,7 @@ export default function Footer() {
 
           {/* 🔶 Logo & Contact */}
           <div className="col-md-3">
-            <h5 className="fw-bold text-orange">EdTech</h5>
+          <h5 className="edtech-heading">EdTech</h5>
             <ul className="list-unstyled small mt-3">
               <li className="mb-2"><FaEnvelope className="me-2 text-secondary" /> edtech@gmail.com</li>
               <li className="mb-2"><FaPhoneAlt className="me-2 text-secondary" /> +91 91813 23 2309</li>

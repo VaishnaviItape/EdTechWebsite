@@ -248,38 +248,38 @@ export default function Home() {
           </div>
 
           {/* Testimonials */}
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
             <div>
-              <h2 class="fw-semibold">Our Testimonials</h2>
-              <p class="text-muted small mt-2">
+              <h2 className="fw-semibold">Our Testimonials</h2>
+              <p className="text-muted small mt-2">
                 Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
               </p>
             </div>
-            <button class="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button>
+            <button className="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button>
           </div>
 
           {/* <!-- Testimonial Cards Grid --> */}
-          <div class="row g-4">
+          <div className="row g-4">
             {/* <!-- Card 1 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
+            <div className="col-md-4">
+              <div className="card shadow-sm h-100">
+                <div className="card-body d-flex flex-column justify-content-between">
                   <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
                     </div>
-                    <p class="card-text small">
+                    <p className="card-text small">
                       The Data Analytics course provided a perfect blend of theory and hands-on practice. The real-world
                       projects helped me build a portfolio that I now proudly showcase during job interviews.
                     </p>
                   </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Dipak" class="rounded-circle me-2" width="40" height="40" />
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Dipak" className="rounded-circle me-2" width="40" height="40" />
                       <div>
-                        <div class="fw-semibold small">Dipak</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
+                        <div className="fw-semibold small">Dipak</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
                       </div>
                     </div>
                   </div>
@@ -288,25 +288,25 @@ export default function Home() {
             </div>
 
             {/* <!-- Card 2 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
+            <div className="col-md-4">
+              <div className="card shadow-sm h-100">
+                <div className="card-body d-flex flex-column justify-content-between">
                   <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
                     </div>
-                    <p class="card-text small">
+                    <p className="card-text small">
                       I had no prior experience in analytics, but this course made it approachable and even exciting. The
                       instructor’s clear explanations and practical examples made all the difference.
                     </p>
                   </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Sakshi" class="rounded-circle me-2" width="40" height="40" />
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Sakshi" className="rounded-circle me-2" width="40" height="40" />
                       <div>
-                        <div class="fw-semibold small">Sakshi</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
+                        <div className="fw-semibold small">Sakshi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
                       </div>
                     </div>
                   </div>
@@ -315,25 +315,25 @@ export default function Home() {
             </div>
 
             {/* <!-- Card 3 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
+            <div className="col-md-4">
+              <div className="card shadow-sm h-100">
+                <div className="card-body d-flex flex-column justify-content-between">
                   <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
                     </div>
-                    <p class="card-text small">
+                    <p className="card-text small">
                       The modules on Excel, SQL, and Python were incredibly helpful. I now feel confident in using data,
                       to make informed decisions at work.
                     </p>
                   </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Ovi" class="rounded-circle me-2" width="40" height="40" />
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Ovi" className="rounded-circle me-2" width="40" height="40" />
                       <div>
-                        <div class="fw-semibold small">Ovi</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
+                        <div className="fw-semibold small">Ovi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
                       </div>
                     </div>
                   </div>
@@ -344,59 +344,60 @@ export default function Home() {
         </div>
       </section>
 
-      <section class="bg-light py-5">
-        <div class="container">
+      <section className="bg-light py-5">
+        <div className="container">
           {/* <!-- Section Title --> */}
-          <div class="mb-4">
-            <h3 class="fw-bold">Got Questions? Let’s Talk.</h3>
-            <p class="text-muted small">Students From All Over India Trust Us</p>
+          <div className="mb-4">
+            <h3 className="fw-bold">Got Questions? Let’s Talk.</h3>
+            <p className="text-muted small">Students From All Over India Trust Us</p>
           </div>
 
           {/* <!-- Form + Image Row --> */}
-          <div class="row bg-white rounded shadow-sm p-4 g-4 align-items-center">
+          <div className="row bg-white rounded shadow-sm p-4 g-4 align-items-center">
             {/* <!-- Form Column --> */}
-            <div class="col-lg-6">
+            <div className="col-lg-6">
               <form>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label small">First Name</label>
-                    <input type="text" class="form-control" placeholder="Enter First Name" />
+                <div className="row g-3">
+                  <div className="col-md-6">
+                    <label className="form-label small">First Name</label>
+                    <input type="text" className="form-control" placeholder="Enter First Name" />
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label small">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Enter Last Name" />
+                  <div className="col-md-6">
+                    <label className="form-label small">Last Name</label>
+                    <input type="text" className="form-control" placeholder="Enter Last Name" />
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label small">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter your Email" />
+                  <div className="col-md-6">
+                    <label className="form-label small">Email</label>
+                    <input type="email" className="form-control" placeholder="Enter your Email" />
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label small">Phone</label>
-                    <input type="tel" class="form-control" placeholder="Enter Phone Number" />
+                  <div className="col-md-6">
+                    <label className="form-label small">Phone</label>
+                    <input type="tel" className="form-control" placeholder="Enter Phone Number" />
                   </div>
-                  <div class="col-12">
-                    <label class="form-label small">Course</label>
-                    <select class="form-select">
-                      <option selected disabled>Choose your course</option>
-                      <option>Data Analytics</option>
-                      <option>Web Development</option>
-                      <option>UI/UX Design</option>
+                  <div className="col-12">
+                    <label className="form-label small">Course</label>
+                    <select className="form-select" defaultValue="">
+                      <option value="" disabled>Choose your course</option>
+                      <option value="Data Analytics">Data Analytics</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="UI/UX Design">UI/UX Design</option>
                     </select>
+
                   </div>
-                  <div class="col-12">
-                    <label class="form-label small">Message</label>
-                    <textarea class="form-control" rows="4" placeholder="Enter your Message here..."></textarea>
+                  <div className="col-12">
+                    <label className="form-label small">Message</label>
+                    <textarea className="form-control" rows="4" placeholder="Enter your Message here..."></textarea>
                   </div>
-                  <div class="col-12">
-                    <button class="btn btn-warning text-white px-4 mt-2">Send Your Message</button>
+                  <div className="col-12">
+                    <button className="btn btn-warning text-white px-4 mt-2">Send Your Message</button>
                   </div>
                 </div>
               </form>
             </div>
 
             {/* <!-- Image Column --> */}
-            <div class="col-lg-6 text-center">
-              <img src={MapSection} alt="India Map" class="img-fluid" />
+            <div className="col-lg-6 text-center">
+              <img src={MapSection} alt="India Map" className="img-fluid" />
             </div>
           </div>
         </div>

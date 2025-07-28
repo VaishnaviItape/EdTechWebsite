@@ -12,7 +12,7 @@ import Contact from './website/pages/Contact'
 import Courses from './website/pages/Courses'
 import LoginPage from './website/pages/new-login'
 import SignUpPage from './website/pages/Sign-up'
-
+import ViewCourses from './website/pages/ViewCourses';
 function App() {
   return (
     <Router>
@@ -24,7 +24,7 @@ function App() {
         <Route path="/courses" element={<Layout><Courses /></Layout>} />
         <Route path="/new-login" element={<Layout><LoginPage /></Layout>} />
         <Route path="/new-register" element={<Layout><SignUpPage /></Layout>} />
-
+        <Route path="/view-course" element={<ViewCourses />} />
         {/* Auth pages without layout (optional) */}
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />

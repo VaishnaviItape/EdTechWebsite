@@ -11,8 +11,15 @@ import sapImg4 from '../../images/Image (6).png';
 import sapImg5 from '../../images/Image (7).png';
 import sapImg6 from '../../images/Image (8).png';
 import '../../website/css/Courses.css'; // ✅ CSS is imported
+import { useNavigate } from 'react-router-dom';
 
 export default function Courses() {
+  const navigate = useNavigate();
+
+  const handleViewCourse = () => {
+    navigate('/view-course'); // navigate to the ViewCourses page
+  };
+
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-16">
       {/* Header */}
@@ -43,6 +50,7 @@ export default function Courses() {
           <p className="mt-2 text-gray-600 text-sm">
             Learn to collect, clean, and analyze data using tools like Excel, SQL, Python, and Power BI. Gain practical skills for business intelligence and data-driven decision making.
           </p>
+           <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
         </div>
 
         {/* <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mb-4">
@@ -67,7 +75,6 @@ export default function Courses() {
           <span className="info-pill">4 Weeks</span>
           <span className="info-pill">Beginner</span>
           <span className="course-author">By Sagar</span>
-
         </div>
 
 
@@ -133,7 +140,7 @@ export default function Courses() {
           <span className="info-pill">8 Weeks</span>
           <span className="info-pill">Intermediate</span>
           <span className="course-author">By David Brown</span>
-          <button className="view-course-btn">View Course</button>
+          <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
         </div>
 
         <div className="curriculum-container">

@@ -29,7 +29,7 @@ export default function Contact() {
           </div> */}
 
           {/* Form + Image Row */}
-      <div className="contact-card-wrapper row bg-white shadow-sm p-4 mx-auto">
+          <div className="contact-card-wrapper row bg-white shadow-sm p-4 mx-auto">
             {/* Form Column */}
             <div className="col-lg-6">
               <form>
@@ -52,12 +52,13 @@ export default function Contact() {
                   </div>
                   <div className="col-12">
                     <label className="form-label small">Course</label>
-                    <select className="form-select">
-                      <option selected disabled>Choose your course</option>
-                      <option>Data Analytics</option>
-                      <option>Web Development</option>
-                      <option>UI/UX Design</option>
+                    <select className="form-select" defaultValue="">
+                      <option value="" disabled>Choose your course</option>
+                      <option value="Data Analytics">Data Analytics</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="UI/UX Design">UI/UX Design</option>
                     </select>
+
                   </div>
                   <div className="col-12">
                     <label className="form-label small">Message</label>
@@ -87,7 +88,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      
+
     </div>
   );
 }

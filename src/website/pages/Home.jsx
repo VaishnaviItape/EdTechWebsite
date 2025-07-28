@@ -63,7 +63,7 @@ export default function Home() {
           className="d-flex justify-content-center my-3 text-muted fs-6 mx-auto"
           style={{ maxWidth: '600px' }}
         >
-          <div className="quote-mark me-2 fs-3">❝</div>
+          {/* <div className="quote-mark me-2 fs-3">❝</div> */}
           <p className="mb-0">
             Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get
             certified and land your dream job with expert mentorship and career
@@ -395,12 +395,13 @@ export default function Home() {
                   </div>
                   <div class="col-12">
                     <label class="form-label small">Course</label>
-                    <select class="form-select">
-                      <option selected disabled>Choose your course</option>
-                      <option>Data Analytics</option>
-                      <option>Web Development</option>
-                      <option>UI/UX Design</option>
+                    <select className="form-select" defaultValue="">
+                      <option value="" disabled>Choose your course</option>
+                      <option value="Data Analytics">Data Analytics</option>
+                      <option value="Web Development">Web Development</option>
+                      <option value="UI/UX Design">UI/UX Design</option>
                     </select>
+
                   </div>
                   <div class="col-12">
                     <label class="form-label small">Message</label>
