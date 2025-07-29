@@ -1,140 +1,164 @@
 .about-section {
-    background: #f8f9fa;
-    padding: 40px 20px;
+  background: #f8f9fa;
+  padding: 40px 20px;
 }
 
 .about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 /* Left Title */
 .about-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #222;
-    min-width: 465px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  min-width: 465px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-style: normal;
 }
 
 /* Right Text */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400&display=swap');
+
 .about-text {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 1.5 */
+  letter-spacing: 0;
+  margin-top: 1rem;
+  /* Optional spacing */
 }
+
 
 /* Divider line */
 .about-divider {
-    margin-top: 30px;
-    border: none;
-    border-bottom: 1px solid #ddd;
+  margin-top: 30px;
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
 
 /* ✅ Mobile responsive */
 @media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .about-container {
+    flex-direction: column;
+    gap: 20px;
+  }
 
-    .about-title {
-        font-size: 20px;
-        min-width: auto;
-    }
+  .about-title {
+    font-size: 20px;
+    min-width: auto;
+  }
 
-    .about-text {
-        font-size: 15px;
-    }
+  .about-text {
+    font-size: 15px;
+  }
 }
 
 
 .achievements {
-    background: #f7f7f8;
-    /* padding: 60px 20px; */
+  background: #f7f7f8;
+  /* padding: 60px 20px; */
 }
 
 .achievements-header {
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto 40px 157px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 40px 157px;
 }
 
 .achievements-header h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #222;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500;
+  /* Medium */
+  font-style: normal;
+  font-size: 30px;
+  line-height: 150%;
+  letter-spacing: 0;
+  margin-bottom: 1rem;
 }
 
 .achievements-header p {
-    font-size: 16px;
-    color: #666;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
 }
 
-/* ✅ Grid for cards */
+
 .achievements-grid {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* ✅ Card Style */
 .achievement-card {
-    background: #fff;
-    padding: 24px;
-    border-radius: 12px;
-    text-align: left;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    transition: 0.3s ease;
+  width: 630px;
+  height: 248px;
+  border-radius: 10px;
+  padding: 40px;
+  background-color: #f9f9f9; /* or any preferred background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .achievement-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.achievement-icon {
-    display: inline-block;
-    background: #f3f4ff;
-    color: #6a5acd;
-    font-size: 28px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .achievement-card h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
 }
 
 .achievement-card p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.5;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.5;
 }
 
 /* ✅ Mobile responsive */
 @media (max-width: 768px) {
-    .achievements-grid {
-        grid-template-columns: 1fr;
-        /* stack cards */
-    }
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    /* stack cards */
+  }
 
-    .achievements-header h2 {
-        font-size: 24px;
-    }
+  .achievements-header h2 {
+    font-size: 24px;
+  }
 
-    .achievement-card {
-        padding: 20px;
-    }
+  .achievement-card {
+    padding: 20px;
+  }
+}
+.achievements-footer {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  margin-top: 1.5rem;
 }
 
 
@@ -146,20 +170,40 @@
 .goals-header {
   text-align: left;
   max-width: 800px;
-   margin: 0 auto 40px 157px;
+  margin: 0 auto 40px 157px;
+}
+.goals-header h2 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-size: 30px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #222;
+  margin-bottom: 8px;
 }
 
-.goals-header h2 {
+/* .goals-header h2 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #222;
-}
+} */
 
-.goals-header p {
+/* .goals-header p {
   font-size: 16px;
   color: #666;
+} */
+ .goals-header p {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #666;
 }
+
 
 /* ✅ Grid layout */
 .goals-grid {
@@ -195,23 +239,43 @@
   margin-bottom: 15px;
 }
 
-.goal-card h3 {
+/* .goal-card h3 {
   font-size: 18px;
   font-weight: bold;
   color: #222;
   margin-bottom: 8px;
+} */
+.goal-card h3 {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #222;
+  margin-bottom: 8px;
+}
+.goal-card p {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+  color: #555;
 }
 
-.goal-card p {
+/* .goal-card p {
   font-size: 15px;
   color: #555;
   line-height: 1.5;
-}
+} */
 
 /* ✅ Mobile responsive */
 @media (max-width: 768px) {
   .goals-grid {
-    grid-template-columns: 1fr; /* stack cards */
+    grid-template-columns: 1fr;
+    /* stack cards */
   }
 
   .goals-header h2 {
@@ -225,51 +289,88 @@
 
 
 .cta-section {
-  background: #f8f9fa;
-  padding: 50px 20px;
+  width: 1347px;
+  height: 274px;
+  border-radius: 10px;
+  padding-top: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  position: relative;
+  gap: 300px;
+  overflow: hidden;
+  padding: 60px 80px 40px 100px; /* top right bottom left */
+
 }
 
 .cta-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 12px;
-  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.cta-text {
+  flex: 1;
 }
 
 .cta-text h2 {
-  font-size: 28px;
-  font-weight: bold;
-  color: #222;
-  margin-bottom: 10px;
-}
-
-.cta-text .highlight {
-  color: #ff6b1a; /* orange highlight */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 38px;
+  font-style: normal;
+  line-height: 120%;
+  margin-bottom: 12px;
 }
 
 .cta-text p {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
   font-size: 16px;
-  color: #555;
+  font-style: normal;
+  line-height: 150%;
+  margin-bottom: 20px;
   max-width: 500px;
 }
 
-/* CTA Button */
+.cta-image {
+  width:  482px;
+  height:  275px;
+  position: absolute;
+  right: 117px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.cta-action {
+  z-index: 1;
+}
+
 .cta-btn {
-  background: #ff6b1a;
-  color: #fff;
-  padding: 12px 24px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 20px;
+  background-color: #FF7F22;
+  color: white;
   border: none;
   border-radius: 6px;
-  font-size: 16px;
-  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s ease;
+  z-index: 1;
+  position: relative;
 }
+
+
+.cta-text .highlight {
+  color: #ff6b1a;
+  /* orange highlight */
+}
+
 
 .cta-btn:hover {
   background: #e65a00;
@@ -286,4 +387,16 @@
   .cta-text h2 {
     font-size: 24px;
   }
+}
+.achievement-icon {
+  background: #304FFE1A; /* Light indigo with transparency */
+  border: 1px solid #6D5FFD;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 24px; /* Icon size */
 }

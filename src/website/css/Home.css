@@ -65,6 +65,13 @@
   margin-top: 0.5rem;
 }
 
+
+.hero-container:hover .vector-animation {
+  opacity: 1;
+  bottom: 10px;
+  /* Adjust based on how high you want it to animate */
+}
+
 .why-arrow {
   position: absolute;
   bottom: 1.2rem;
@@ -206,6 +213,16 @@
   margin-bottom: 2rem;
 }
 
+.ten-years-heading {
+  width: 169px;
+  height: 72px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
 .mentors-grid {
   display: grid;
   gap: 1.5rem;
@@ -246,52 +263,57 @@
   font-size: 0.85rem;
   color: #333;
 }
-.hero-container {
+
+.ellipse-background,
+.vector-animation,
+.girl-image {
+  width: 952px;
   position: relative;
-  width: fit-content;
-  margin: auto;
-  margin-top: 40px;
+  z-index: 2;
 }
 
-.ellipse-background {
-  width: 811px;
-  height: auto;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 0;
-}
 
 .girl-image {
   width: 952px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
+.girl-image:hover ~ .hero-buttons ~ .bottom-info ~ .hero-heading,
+.hero-section:hover .hero-heading {
+  transform: translateY(0%);
+  opacity: 1;
+}
 
-.hero-container {
+/* .hero-container {
   position: relative;
   width: fit-content;
   margin: auto;
   margin-top: 40px;
-}
+} */
 
 .ellipse-background {
-  width: 811px;
-  height: auto;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 0;
+  /* BACKGROUND */
+}
+
+.vector-animation {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  /* ABOVE ELLIPSE but BELOW girl */
+  opacity: 0;
+  transition: all 1.8s ease-in-out;
 }
 
 .girl-image {
-  width: 952px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  /* ABOVE everything */
 }
+
 
 /* 🔲 Combined button card-style container */
 .hero-buttons {
@@ -299,6 +321,7 @@
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 1.8s ease-in-out;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -309,9 +332,16 @@
   border-radius: 50px;
   border: 2px solid #fff;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.15); /* Optional: for semi-transparent card feel */
-  backdrop-filter: blur(8px); /* Optional: for glassmorphism effect */
+  background-color: rgba(255, 255, 255, 0.15);
+  /* Optional: for semi-transparent card feel */
+  backdrop-filter: blur(8px);
+  /* Optional: for glassmorphism effect */
   z-index: 2;
+}
+
+.girl-image:hover~.vector-animation {
+  opacity: 1;
+  bottom: 10px;
 }
 
 /* ✨ Shared button base style */
@@ -342,6 +372,7 @@
   color: white;
   border: 0.5px solid white;
 }
+
 .hover-container {
   position: relative;
   display: inline-block;
@@ -364,7 +395,7 @@
 .left-image.one {
   top: 110px;
   left: 90px;
- width: 90px;
+  width: 90px;
   height: 89px;
 }
 
@@ -401,3 +432,115 @@
 }
 
 /* ON HOVER: move left images slightly leftwards (close to mobile) */
+.hero-section {
+  position: relative;
+}
+
+.hero-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
+  /* 600 = SemiBold in most font families */
+  font-style: normal;
+  /* 'SemiBold' is not a valid font-style, use 'normal' or 'italic' */
+  font-size: 95.57px;
+  line-height: 100%;
+  letter-spacing: -1.5%;
+  text-align: center;
+  transition: transform 1.8s ease-in-out, opacity 1.8s ease-in-out;
+}
+
+
+.hero-container {
+  position: relative;
+  transition: all 0.6s ease;
+}
+
+.bottom-info {
+  position: absolute;
+  bottom: 425px;
+  /* ✅ Set lower initially, adjust as needed */
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  transform: translateY(0);
+ transition: transform 1.8s ease-in-out;
+  font-family: 'Inter', sans-serif;
+  /* ✅ Consistent font */
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  /* ✅ -1.5% as decimal */
+}
+
+.hero-section:hover .bottom-info {
+  transform: translateY(-90%);
+  transition: transform 1.8s ease-in-out;
+}
+
+
+
+/* === Hover Animation === */
+.hero-section:hover .hero-heading {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.ten-years-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  /* Use 'normal' instead of 'Bold' */
+  font-size: 47px;
+  line-height: 100%;
+  letter-spacing: -1.5%;
+  text-align: center;
+}
+
+.custom-paragraph {
+  padding-left: 0px;
+  ;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  /* 'Medium' is not valid, use 'normal' or 'italic' */
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.015em;
+  /* -1.5% converted to em */
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .bottom-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-text,
+  .info-years {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.info-text,
+.info-years {
+  width: 49%;
+  transition: transform 0.6s ease;
+  max-width: 33%;
+}

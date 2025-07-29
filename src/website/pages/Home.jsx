@@ -1,6 +1,7 @@
 import React from 'react'; // optional: if you want to move styling here
 import heroImg from '../../images/young-pretty-woman-looking.png';
 import ellipseImg from '../../images/Ellipse 2.png';
+import Vector from '../../images/Vector_Animation.png';
 import mobileImg from '../../images/iPhone Space Deep Purple Front 1.png';
 import Avatar from '../../images/Avatar.png';
 import MapSection from '../../images/MAP SECTION.png';
@@ -57,85 +58,51 @@ export default function Home() {
   );
   return (
     <div className="container py-5">
-      <div className="text-center py-5 position-relative overflow-hidden">
-        <h1 className="display-5 fw-bold">
+      <div className="text-center py-5 position-relative overflow-hidden hero-section">
+        <h1 className="display-5 fw-bold hero-heading">
           Learn Skills That <br /> Get You Hired
         </h1>
 
-        <div
-          className="d-flex justify-content-center my-3 text-muted fs-6 mx-auto"
-          style={{ maxWidth: '600px' }}
-        >
-          {/* <div className="quote-mark me-2 fs-3">❝</div> */}
-          <p className="mb-0">
-            Learn Data Analytics, SAP, or CAD/CAE from industry experts. Get
-            certified and land your dream job with expert mentorship and career
-            support.
-          </p>
-        </div>
-
-        {/* <div className="position-relative d-flex justify-content-center mt-4">
-      <div
-        className="position-absolute rounded-circle"
-        style={{
-          width: '500px',
-          height: '300px',
-          backgroundColor: '#FF914D',
-          bottom: '-50px',
-          zIndex: 0,
-          borderRadius:'223px 223px 0px 0px;'
-        }}
-      />
-      <img
-        src={heroImg}
-        alt="girl"
-        className="img-fluid"
-        style={{
-          maxWidth: '350px',
-          position: 'relative',
-          zIndex: 1,
-        }}
-      />
-    </div> */}
-        {/* <div className="hero-container">
-          <img src={ellipseImg} alt="ellipse background" className="ellipse-background" />
-          <img src={heroImg} alt="girl" className="girl-image" />
-        </div> */}
         <div className="hero-container">
-          <img src={ellipseImg} alt="ellipse background" className="ellipse-background" />
+          <img src={ellipseImg} alt="ellipse" className="ellipse-background" />
+          <img src={Vector} alt="vector" className="vector-animation" />
           <img src={heroImg} alt="girl" className="girl-image" />
 
           <div className="hero-buttons">
-            <button className="explore-btn">
-              Explore Courses <span>&rarr;</span>
-            </button>
-            <button className="download-btn">
-              Download Free Syllabus
-            </button>
+            <button className="explore-btn">Explore Courses <span>&rarr;</span></button>
+            <button className="download-btn">Download Free Syllabus</button>
           </div>
-        </div>
+
+          {/* Animated Bottom Content */}
+          <div className="bottom-info d-flex justify-content-between align-items-end">
+            <div className="info-text text-start">
+              <p className="custom-paragraph m-0">
+                Learn Data Analytics, SAP, or CAD/CAE<br />
+                from industry experts. Get certified and <br />
+                land your dream job with expert mentorship
+                and career support.
+              </p>
+            </div>
 
 
-        {/* <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-          <button className="btn btn-warning px-4 py-2 rounded-pill">
-            Explore Courses <span>&rarr;</span>
-          </button>
-          <button
-            className="btn btn-outline-light px-4 py-2 rounded-pill text-white"
-            style={{ backgroundColor: '#ff914d', borderColor: 'white' }}
-          >
-            Download Free Syllabus
-          </button>
-        </div> */}
-
-        <div className="d-flex justify-content-center align-items-center mt-4">
-          <div className="text-warning fs-4 me-2">★★★★★</div>
-          <div className="text-start">
-            <h5 className="mb-0 text-white">10 Years</h5>
-            <small className="text-muted">Experience</small>
+            <div className="info-years text-end">
+              <div className="fs-4" style={{ color: '#ff6600' }}>★★★★★</div>
+              <h5
+                className="mb-0"
+                style={{
+                  fontWeight: 700,
+                  fontSize: '47px',
+                  fontFamily: 'Urbanist, sans-serif'
+                }}
+              >
+                10 Years
+              </h5>
+              <small className="text-muted">Experience</small>
+            </div>
           </div>
         </div>
       </div>
+
       <section className="why-section">
         {/* --- Simplified Learning Section --- */}
         <div className="row align-items-center flex-column-reverse flex-md-row mt-5">
@@ -164,13 +131,13 @@ export default function Home() {
           </div>
 
           {/* Image Section */}
-         <div className="col-md-6 text-center hover-container">
-      <img src={mobileImg} alt="mobile dashboard" className="main-image img-fluid" />
+          <div className="col-md-6 text-center hover-container">
+            <img src={mobileImg} alt="mobile dashboard" className="main-image img-fluid" />
 
-      <img src={leftImg1} alt="left image 1" className="side-image left-image one" />
-      <img src={leftImg2} alt="left image 2" className="side-image left-image two" />
-      <img src={rightImg} alt="right image" className="side-image right-image" />
-    </div>
+            <img src={leftImg1} alt="left image 1" className="side-image left-image one" />
+            <img src={leftImg2} alt="left image 2" className="side-image left-image two" />
+            <img src={rightImg} alt="right image" className="side-image right-image" />
+          </div>
           {/* <div className="col-md-6 text-center">
             <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
           </div> */}
