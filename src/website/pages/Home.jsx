@@ -8,9 +8,18 @@ import MapSection from '../../images/MAP SECTION.png';
 import leftImg1 from "../../images/one app 1.png";
 import leftImg2 from "../../images/secure payment 1.png";
 import rightImg from "../../images/Component 6 1.png";
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import student1 from '../../images/student (1).png';
+import student2 from '../../images/student (2).png';
+import student3 from '../../images/student (3).png';
+import student4 from '../../images/student (4).png';
+import student5 from '../../images/student (5).png';
+
 import '../css/Home.css';
 export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
+  const whySectionRef = useRef(null);
+
   const testimonials = [
     {
       name: "Dipak",
@@ -54,8 +63,28 @@ export default function Home() {
 
 
   const [openIndex, setOpenIndex] = useState(
-    faqData.findIndex((faq) => faq.expanded) ?? -1
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setShowPopup(entry.isIntersecting);
+        },
+        {
+          threshold: 0.5,
+        }
+      );
+
+      if (whySectionRef.current) {
+        observer.observe(whySectionRef.current);
+      }
+
+      return () => {
+        if (whySectionRef.current) {
+          observer.unobserve(whySectionRef.current);
+        }
+      };
+    }, [])
   );
+
   return (
     <div className="container py-5">
       <div className="text-center py-5 position-relative overflow-hidden hero-section">
@@ -144,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="why-section">
+      <section className="why-section" ref={whySectionRef}>
         <h2>Why You'll Love This Course</h2>
 
         <div className="why-grid">
@@ -190,9 +219,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="courses-section">
+      <div className="courses-section">
         <h2>Our Courses</h2>
-        <p className="courses-subtitle">
+        <p className="courses-subtitleh">
           Build job-ready skills with expert-led, hands-on programs in today's most in-demand tech fields.
         </p>
 
@@ -211,16 +240,54 @@ export default function Home() {
               image: require('../../images/industry-work.png'),
             },
           ].map((course, index) => (
-            <div key={index} className="course-card">
+            <div className="course-cardhome" key={index}>
               <img src={course.image} alt={course.title} />
+
               <div className="course-overlay">
-                <h3>{course.title}</h3>
-                <span className="arrow">↗</span>
+                <div className="course-content">
+                  <h3 className="data-analytics-title">{course.title}</h3>
+                  <p className="courses-subtitle">
+                    Learn to collect, analyze, and visualize data using Excel, SQL,
+                    Python, and Power BI. Gain practical skills in business intelligence,
+                    reporting, and data-driven decision-making.
+                  </p>
+                </div>
+
+                <div className="circle-arrow">
+                  <span className="arrow">→</span>
+                </div>
               </div>
             </div>
+
+
           ))}
         </div>
-      </section>
+      </div>
+      {showPopup && (
+        <div className="overlay-form">
+          <div className="form-popup">
+            <button className="close-btn" onClick={() => setShowPopup(false)}>&times;</button>
+            <h4 className="form-title">✅ Ready to Learn Something New?</h4>
+            <p className="form-subtitle">Get updates, tips & resources!</p>
+
+            <div className="form-grid">
+              <input type="text" placeholder="Enter Your Full Name" />
+              <input type="text" placeholder="Enter Your Phone No." />
+              <input type="email" placeholder="Enter Your Email" />
+              <select>
+                <option>Choose your course</option>
+                <option>Data Analytics</option>
+                <option>SAP</option>
+                <option>CAD/CAE</option>
+              </select>
+            </div>
+
+            <div className="form-actions">
+              <button className="btn btn-secondary">Cancel</button>
+              <button className="btn btn-warning">Confirm</button>
+            </div>
+          </div>
+        </div>)}
 
       <section className="mentors-section">
         <h2 className="mentors-title">Meet Your Mentors</h2>
@@ -250,110 +317,188 @@ export default function Home() {
                 <p className="mentor-title">{mentor.title}</p>
                 <p className="mentor-desc">{mentor.desc}</p>
               </div>
+
+              {/* Hover content (initially hidden) */}
+              <div className="hover-overlay">
+                {/* <p>With 8+ years in analytics, Priya brings real-world business intelligence into every session.</p> */}
+                <a href="#" className="linkedin-link">
+                  <img src="/linkedin-icon.png" alt="LinkedIn" className="linkedin-icon" />
+                  Connect on LinkedIn
+                </a>
+              </div>
             </div>
+
           ))}
         </div>
       </section>
 
-      <section className="bg-gray-50 py-12 px-4">
-        <div className="max-w-6xl mx-auto">
+      <div className="scroll-wrapper overflow-hidden">
+        <section className="bg-gray-50 py-12 px-4">
+          <div className="max-w-6xl mx-auto">
 
-          {/* Testimonials */}
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
-            <div>
-              <h2 class="fw-semibold">Our Testimonials</h2>
-              <p class="text-muted small mt-2">
-                Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
-              </p>
+            {/* Title + Button Section */}
+            <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+              <div>
+                <h2 className="fw-semibold">Our Testimonials</h2>
+                <p className="testimonial-text">
+                  Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
+                </p>
+              </div>
+              <button className="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button>
             </div>
-            <button class="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button>
+
+            {/* Scrollable Testimonials */}
+            <div className="scroll-track d-flex  flex-nowrap gap-4 pb-3">
+
+              {/* Card 1 */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      The Data Analytics course provided a perfect blend of theory and hands-on practice...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Dipak" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Dipak</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      I had no prior experience in analytics, but this course made it approachable...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Sakshi" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Sakshi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="card shadow-sm custom-card" >
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      The modules on Excel, SQL, and Python were incredibly helpful...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Ovi" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Ovi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Repeated Cards for Scrolling */}
+
+              {/* Repeat Card 1 */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      The Data Analytics course provided a perfect blend of theory and hands-on practice...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Dipak" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Dipak</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Repeat Card 2 */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      I had no prior experience in analytics, but this course made it approachable...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Sakshi" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Sakshi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Repeat Card 3 */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
+                <div className="card-body d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <div className="d-flex justify-content-between align-items-center mb-2">
+                      <div className="text-warning fs-3">❝</div>
+                      <div className="text-warning small">★★★★★</div>
+                    </div>
+                    <p className="card-text small">
+                      The modules on Excel, SQL, and Python were incredibly helpful...
+                    </p>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                    <div className="d-flex align-items-center">
+                      <img src={Avatar} alt="Ovi" className="rounded-circle me-2" width="40" height="40" />
+                      <div>
+                        <div className="fw-semibold small">Ovi</div>
+                        <div className="text-muted small">Data Analytic @ TCS</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* <!-- Testimonial Cards Grid --> */}
-          <div class="row g-4">
-            {/* <!-- Card 1 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
-                    </div>
-                    <p class="card-text small">
-                      The Data Analytics course provided a perfect blend of theory and hands-on practice. The real-world
-                      projects helped me build a portfolio that I now proudly showcase during job interviews.
-                    </p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Dipak" class="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div class="fw-semibold small">Dipak</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* <!-- Card 2 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
-                    </div>
-                    <p class="card-text small">
-                      I had no prior experience in analytics, but this course made it approachable and even exciting. The
-                      instructor’s clear explanations and practical examples made all the difference.
-                    </p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Sakshi" class="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div class="fw-semibold small">Sakshi</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* <!-- Card 3 --> */}
-            <div class="col-md-4">
-              <div class="card shadow-sm h-100">
-                <div class="card-body d-flex flex-column justify-content-between">
-                  <div>
-                    <div class="d-flex justify-content-between align-items-center mb-2">
-                      <div class="text-warning fs-3">❝</div>
-                      <div class="text-warning small">★★★★★</div>
-                    </div>
-                    <p class="card-text small">
-                      The modules on Excel, SQL, and Python were incredibly helpful. I now feel confident in using data,
-                      to make informed decisions at work.
-                    </p>
-                  </div>
-                  <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div class="d-flex align-items-center">
-                      <img src={Avatar} alt="Ovi" class="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div class="fw-semibold small">Ovi</div>
-                        <div class="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <section class=" py-5">
         <div class="container">
@@ -400,15 +545,22 @@ export default function Home() {
                     <textarea class="form-control" rows="4" placeholder="Enter your Message here..."></textarea>
                   </div>
                   <div class="col-12">
-                    <button class="btn btn-warning text-white px-4 mt-2">Send Your Message</button>
+                    <button class="btn text-white px-4 mt-2" style={{ backgroundColor: '#FF7F22' }}>Send Your Message</button>
                   </div>
                 </div>
               </form>
             </div>
 
             {/* <!-- Image Column --> */}
-            <div class="col-lg-6 text-center">
-              <img src={MapSection} alt="India Map" class="img-fluid" />
+            <div className="col-lg-6 text-center map-container">
+              <img src={MapSection} alt="India Map" className="img-fluid default-img" />
+
+              {/* Student images */}
+              <img src={student1} alt="student1" className="student-img student1" />
+              <img src={student2} alt="student2" className="student-img student2" />
+              <img src={student3} alt="student3" className="student-img student3" />
+              <img src={student4} alt="student4" className="student-img student4" />
+              <img src={student5} alt="student5" className="student-img student5" />
             </div>
           </div>
         </div>
@@ -419,7 +571,7 @@ export default function Home() {
           <div className="row g-4">
             {/* Left Side Title */}
             <div className="col-md-4">
-              <h3 className="fw-bold">Frequently<br />Asked<br />Questions</h3>
+              <h3 className="faq-heading">Frequently<br />Asked<br />Questions</h3>
             </div>
 
             {/* Accordion */}
@@ -429,22 +581,15 @@ export default function Home() {
                   <div key={idx} className="accordion-item border-0 mb-2 rounded shadow-sm">
                     <h2 className="accordion-header">
                       <button
-                        className={`accordion-button rounded ${openIndex === idx ? 'bg-white text-orange fw-semibold' : 'collapsed bg-light'
-                          }`}
+                        className={`accordion-button rounded faq-question ${openIndex === idx ? 'bg-white text-orange fw-semibold' : 'collapsed bg-light'}`}
                         type="button"
                         onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
                       >
                         {faq.question}
                       </button>
                     </h2>
-                    <div
-                      className={`accordion-collapse collapse ${openIndex === idx ? 'show' : ''
-                        }`}
-                    >
-                      <div
-                        className={`accordion-body ${openIndex === idx ? 'border-start border-3 border-warning bg-light-subtle' : ''
-                          }`}
-                      >
+                    <div className={`accordion-collapse collapse ${openIndex === idx ? 'show' : ''}`}>
+                      <div className={`accordion-body faq-answer ${openIndex === idx ? 'border-start border-3 border-warning bg-light-subtle' : ''}`}>
                         {faq.answer}
                       </div>
                     </div>
@@ -455,6 +600,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
 
 

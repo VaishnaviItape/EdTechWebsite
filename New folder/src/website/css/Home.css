@@ -99,7 +99,7 @@
   justify-content: center;
 }
 
-.course-card {
+.course-cardhome {
   position: relative;
   overflow: hidden;
   border-radius: 14px;
@@ -108,11 +108,11 @@
   transition: transform 0.3s ease;
 }
 
-.course-card:hover {
+.course-cardhome:hover {
   transform: scale(1.02);
 }
 
-.course-card img {
+.course-cardhome img {
   width: 100%;
   height: 100%;
   object-fit: cover;
