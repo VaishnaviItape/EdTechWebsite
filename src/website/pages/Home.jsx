@@ -1,4 +1,4 @@
-import React from 'react'; // optional: if you want to move styling here
+
 import heroImg from '../../images/young-pretty-woman-looking.png';
 import ellipseImg from '../../images/Ellipse 2.png';
 import Vector from '../../images/Vector_Animation.png';
@@ -15,11 +15,20 @@ import student3 from '../../images/student (3).png';
 import student4 from '../../images/student (4).png';
 import student5 from '../../images/student (5).png';
 import { useNavigate } from 'react-router-dom';
+
 import '../css/Home.css';
 export default function Home() {
-  const [showPopup, setShowPopup] = useState(false);
-  const whySectionRef = useRef(null);
+  const [showDownloadPopup, setShowDownloadPopup] = useState(false);
+  const [showFormPopup, setShowFormPopup] = useState(false);
 
+  const whySectionRef = useRef(null);
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/brochure.pdf'; // 🔁 Put the correct PDF path here
+    link.download = 'Course-Brochure.pdf';
+    link.click();
+    setShowDownloadPopup(false); // Close popup after download
+  };
   const testimonials = [
     {
       name: "Dipak",
@@ -66,7 +75,7 @@ export default function Home() {
     useEffect(() => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          setShowPopup(entry.isIntersecting);
+          setShowFormPopup(entry.isIntersecting);
         },
         {
           threshold: 0.5,
@@ -114,7 +123,10 @@ export default function Home() {
             <button className="explore-btn" onClick={handleExploreClick}>
               Explore Courses <span>&rarr;</span>
             </button>
-            <button className="download-btn">Download Free Syllabus</button>
+            <button className="download-btn" onClick={() => setShowDownloadPopup(true)}>
+              Download Free Syllabus
+            </button>
+
           </div>
 
           {/* Animated Bottom Content */}
@@ -282,10 +294,39 @@ export default function Home() {
           ))}
         </div>
       </div>
-      {showPopup && (
+      {showDownloadPopup  && (
         <div className="overlay-form">
           <div className="form-popup">
-            <button className="close-btn" onClick={() => setShowPopup(false)}>&times;</button>
+            <button className="close-btn" onClick={() => setShowDownloadPopup(false)}>
+              &times;
+            </button>
+            <h4 className="form-title">✅ Ready to Learn Something New?</h4>
+            <p className="form-subtitle">Get updates, tips & resources!</p>
+
+            <div className="form-grid">
+              <input type="text" placeholder="Enter Your Full Name" />
+              <input type="text" placeholder="Enter Your Phone No." />
+              <input type="email" placeholder="Enter Your Email" />
+              <select>
+                <option>Choose your course</option>
+                <option>Data Analytics</option>
+                <option>SAP</option>
+                <option>CAD/CAE</option>
+              </select>
+            </div>
+
+            <div className="form-actions">
+              <button className="btn btn-warning" onClick={handleDownload}>
+                Download
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+      {showFormPopup  && (
+        <div className="overlay-form">
+          <div className="form-popup">
+            <button className="close-btn" onClick={() => setShowFormPopup(false)}>&times;</button>
             <h4 className="form-title">✅ Ready to Learn Something New?</h4>
             <p className="form-subtitle">Get updates, tips & resources!</p>
 
