@@ -121,10 +121,12 @@
 .mentor-card:hover {
   transform: translateY(-6px);
 }
+
 .hover-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #ff914d, #fff); /* Orange to white gradient */
+  background: linear-gradient(to top, #ff914d, #fff);
+  /* Orange to white gradient */
   color: black;
   padding: 1.5rem;
   border-radius: 16px;
@@ -143,6 +145,7 @@
   transform: translateY(0);
   pointer-events: auto;
 }
+
 .linkedin-link {
   display: flex;
   align-items: center;
@@ -152,6 +155,7 @@
   text-decoration: none;
   margin-top: 1rem;
 }
+
 .hover-overlay p,
 .hover-overlay a {
   opacity: 0;
@@ -164,11 +168,13 @@
   opacity: 1;
   transform: translateY(0);
 }
+
 .custom-card {
   width: 384px;
   height: 356px;
   gap: 24px;
-  transform: rotate(0deg); /* 'angle' converted to CSS property */
+  transform: rotate(0deg);
+  /* 'angle' converted to CSS property */
   opacity: 1;
   border-radius: 24px;
   padding: 24px;
@@ -183,12 +189,14 @@
   width: 20px;
   height: 20px;
 }
+
 .mentor-avatar {
   width: 60px;
   height: 60px;
   object-fit: contain;
   border-radius: 50%;
 }
+
 .testimonial-text {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 400;
@@ -201,7 +209,8 @@
 .mentor-title {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 400;
-  font-style: normal; /* 'Regular' in CSS is written as 'normal' */
+  font-style: normal;
+  /* 'Regular' in CSS is written as 'normal' */
   font-size: 0.9rem;
   line-height: 150%;
   letter-spacing: 0px;
@@ -293,7 +302,7 @@
   z-index: 2;
 }
 
-.girl-image:hover ~ .hero-buttons ~ .bottom-info ~ .hero-heading,
+.girl-image:hover~.hero-buttons~.bottom-info~.hero-heading,
 .hero-section:hover .hero-heading {
   transform: translateY(0%);
   opacity: 1;
@@ -319,7 +328,7 @@
   z-index: 1;
   /* ABOVE ELLIPSE but BELOW girl */
   opacity: 0;
-  transition: all 1.8s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .girl-image {
@@ -480,7 +489,7 @@
   justify-content: space-between;
   align-items: flex-end;
   transform: translateY(0);
- transition: transform 1.8s ease-in-out;
+  transition: transform 1.8s ease-in-out;
   font-family: 'Inter', sans-serif;
   /* ✅ Consistent font */
   font-weight: 500;
@@ -558,11 +567,13 @@
   transition: transform 0.6s ease;
   max-width: 33%;
 }
+
 .courses-section {
   padding: 4rem 2rem;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 600;
-  font-style: normal; /* CSS does not support SemiBold directly */
+  font-style: normal;
+  /* CSS does not support SemiBold directly */
   font-size: 38px;
   line-height: 150%;
   letter-spacing: 0%;
@@ -587,14 +598,16 @@
 
 .courses-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2 columns */
   gap: 1.5rem;
   max-width: 100%;
 }
 
 @media (max-width: 768px) {
   .courses-grid {
-    grid-template-columns: 1fr; /* Stack all on smaller screens */
+    grid-template-columns: 1fr;
+    /* Stack all on smaller screens */
   }
 }
 
@@ -694,6 +707,7 @@
   background-color: #ff7300;
   color: white;
 }
+
 /* === Overlay Background === */
 .overlay-form {
   position: fixed;
@@ -701,13 +715,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Transparent black */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Transparent black */
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* allows scroll from top */
+  align-items: flex-start;
+  /* allows scroll from top */
   z-index: 9999;
   overflow-y: auto;
-  padding: 40px 20px; /* some space from top/bottom */
+  padding: 40px 20px;
+  /* some space from top/bottom */
 }
 
 .form-popup {
@@ -718,7 +735,8 @@
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   position: relative;
-  margin: auto; /* helps with vertical scroll */
+  margin: auto;
+  /* helps with vertical scroll */
 }
 
 
@@ -796,11 +814,13 @@
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
+
 .default-img {
   display: block;
   width: 100%;
@@ -862,6 +882,7 @@
   top: 260px;
   left: 223px;
 }
+
 .scroll-wrapper {
   width: 100%;
   overflow: hidden;
@@ -873,7 +894,7 @@
   display: flex;
 }
 
-.scroll-track > .card {
+.scroll-track>.card {
   flex: 0 0 auto;
   min-width: 300px;
   margin-right: 1rem;
@@ -883,22 +904,29 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
 }
+
 .faq-answer {
-  font-family: var(--font-primary, 'Be Vietnam Pro', sans-serif); /* fallback if var not set */
+  font-family: var(--font-primary, 'Be Vietnam Pro', sans-serif);
+  /* fallback if var not set */
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem; /* adjust if "Typography/Font Size/Paragraph/Default" is known */
+  font-size: 1rem;
+  /* adjust if "Typography/Font Size/Paragraph/Default" is known */
   line-height: 166%;
   letter-spacing: 0;
-}.faq-question {
+}
+
+.faq-question {
   font-family: var(--font-primary, 'Be Vietnam Pro', sans-serif);
   font-weight: 600;
   font-style: normal;
-  font-size: 1.25rem; /* adjust to match "Typography/Font Size/Display 5" */
+  font-size: 1.25rem;
+  /* adjust to match "Typography/Font Size/Display 5" */
   line-height: 135%;
   letter-spacing: 0;
 }
@@ -906,7 +934,8 @@
 .faq-heading {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 600;
-  font-style: normal; /* 'SemiBold' isn't valid CSS — use weight instead */
+  font-style: normal;
+  /* 'SemiBold' isn't valid CSS — use weight instead */
   font-size: 38px;
   line-height: 120%;
   letter-spacing: 0;
