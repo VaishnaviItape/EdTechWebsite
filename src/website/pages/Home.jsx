@@ -14,7 +14,7 @@ import student2 from '../../images/student (2).png';
 import student3 from '../../images/student (3).png';
 import student4 from '../../images/student (4).png';
 import student5 from '../../images/student (5).png';
-
+import { useNavigate } from 'react-router-dom';
 import '../css/Home.css';
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -84,7 +84,20 @@ export default function Home() {
       };
     }, [])
   );
+  const navigate = useNavigate();
 
+  const handleExploreClick = () => {
+    navigate('/courses');
+  };
+  const handleNavigate = (courseTitle) => {
+    if (courseTitle === 'Data Analytics') {
+      navigate('/view-course');
+    } else if (courseTitle === 'SAP') {
+      navigate('/view-coursesap');
+    } else if (courseTitle === 'CAD/CAE') {
+      navigate('/view-coursescda');
+    }
+  };
   return (
     <div className="container py-5">
       <div className="text-center py-5 position-relative overflow-hidden hero-section">
@@ -98,7 +111,9 @@ export default function Home() {
           <img src={heroImg} alt="girl" className="girl-image" />
 
           <div className="hero-buttons">
-            <button className="explore-btn">Explore Courses <span>&rarr;</span></button>
+            <button className="explore-btn" onClick={handleExploreClick}>
+              Explore Courses <span>&rarr;</span>
+            </button>
             <button className="download-btn">Download Free Syllabus</button>
           </div>
 
@@ -144,7 +159,7 @@ export default function Home() {
               Live classes, notes, and progress — all in one smart dashboard. <br />
               No juggling apps or searching for links. Just log in and start learning.
             </p>
-            <button className="btn btn-warning px-4 py-2 rounded-pill">Get Course Details</button>
+            <button className="btn btn-warning px-4 py-2 rounded-pill" onClick={handleExploreClick}>Get Course Details</button>
 
             <div className="d-flex align-items-center gap-3 mt-4">
               <div className="d-flex">
@@ -230,14 +245,17 @@ export default function Home() {
             {
               title: 'Data Analytics',
               image: require('../../images/image 8.png'),
+              desc: 'Learn to collect, analyze, and visualize data using Excel, SQL, Python, and Power BI. Gain practical skills in business intelligence,reporting, and data-driven decision-making.'
             },
             {
               title: 'SAP',
               image: require('../../images/image 9.png'),
+              desc: 'Master SAP modules like FICO, MM, and SD. Learn real-world applications in finance, procurement, and supply chain to prepare for ERP roles in global companies'
             },
             {
               title: 'CAD/CAE',
               image: require('../../images/industry-work.png'),
+              desc: 'Design and simulate real engineering projects using tools like AutoCAD, SolidWorks, and ANSYS. Ideal for aspiring mechanical civil, and structural engineers.'
             },
           ].map((course, index) => (
             <div className="course-cardhome" key={index}>
@@ -247,15 +265,16 @@ export default function Home() {
                 <div className="course-content">
                   <h3 className="data-analytics-title">{course.title}</h3>
                   <p className="courses-subtitle">
-                    Learn to collect, analyze, and visualize data using Excel, SQL,
-                    Python, and Power BI. Gain practical skills in business intelligence,
-                    reporting, and data-driven decision-making.
+                    {course.desc}
                   </p>
                 </div>
-
-                <div className="circle-arrow">
+                <div className="circle-arrow" onClick={() => handleNavigate(course.title)} style={{ cursor: 'pointer' }}>
                   <span className="arrow">→</span>
                 </div>
+
+                {/* <div className="circle-arrow">
+                  <span className="arrow">→</span>
+                </div> */}
               </div>
             </div>
 
@@ -344,7 +363,7 @@ export default function Home() {
                   Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
                 </p>
               </div>
-              <button className="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button>
+              {/* <button className="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button> */}
             </div>
 
             {/* Scrollable Testimonials */}

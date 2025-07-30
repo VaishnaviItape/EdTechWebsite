@@ -4,8 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock, faBook, faPuzzlePiece, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faCrown, faAward, faSmile, faBolt } from '@fortawesome/free-solid-svg-icons';
 import abstract from '../../images/Abstract Design.png';
-
+import { useNavigate } from 'react-router-dom';
 export default function About() {
+   const navigate = useNavigate();
+
+  const handleJoinClick = () => {
+    navigate('/contact');
+  };
   const achievements = [
     {
       icon: faCrown,
@@ -155,7 +160,7 @@ export default function About() {
           </div>
 
           <div className="cta-action">
-            <button className="cta-btn">Join Now</button>
+            <button className="cta-btn" onClick={handleJoinClick}>Join Now</button>
           </div>
         </div>
       </section>
