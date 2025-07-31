@@ -1,74 +1,125 @@
-/* src/styles/Courses.css */
+/* Header Section */
 .header-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 4rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* background-color: #262626; */
-    color: #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #262626;
 }
 
 @media (min-width: 768px) {
-    .header-section {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .header-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
+/* Month Card */
 .month-card {
-    width: 545px;
-    height: 497px;
-    background: #FFFFFF;
-    gap: 40px;
-    opacity: 1;
-    border-radius: 10px;
-    padding: 40px !important;
-    font-family: 'Be Vietnam Pro', sans-serif;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  height: auto;
 }
 
 .month-card h5 {
-    font-weight: 700;
-    font-style: bold;
-    font-size: 60px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    text-align: right;
-    margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1;
+  text-align: right;
+  margin-bottom: 20px;
 }
 
 .month-card p {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-weight: 500;
-    font-style: medium;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .month-card ul li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    background: #F9F9F9;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #262626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #262626;
+  flex-wrap: wrap;
 }
 
 .month-card ul li span.text-muted {
-    background-color: #F2F2F2;
-    color: #666;
+  background-color: #f2f2f2;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  margin-top: 8px;
+}
+
+/* Play Icon Responsiveness */
+.play-icon {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .month-card h5 {
+    font-size: 36px;
+    text-align: left;
+  }
+
+  .month-card ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .month-card ul li span.text-muted {
+    margin-top: 6px;
+  }
+
+  .course-description {
     font-size: 14px;
-    font-weight: 500;
-    padding: 4px 12px;
-    border-radius: 12px;
-    white-space: nowrap;
+  }
+
+  .play-icon {
+    font-size: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-section {
+    padding: 2rem 1rem;
+  }
+
+  .month-card {
+    padding: 1.5rem;
+  }
+
+  .month-card h5 {
+    font-size: 32px;
+  }
+
+  .month-card p {
+    font-size: 14px;
+  }
+
+  .month-card ul li {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .month-card ul li span.text-muted {
+    font-size: 12px;
+  }
 }

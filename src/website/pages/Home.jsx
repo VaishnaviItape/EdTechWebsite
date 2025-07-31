@@ -8,7 +8,7 @@ import MapSection from '../../images/MAP SECTION.png';
 import leftImg1 from "../../images/one app 1.png";
 import leftImg2 from "../../images/secure payment 1.png";
 import rightImg from "../../images/Component 6 1.png";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import student1 from '../../images/student (1).png';
 import student2 from '../../images/student (2).png';
 import student3 from '../../images/student (3).png';
@@ -29,23 +29,7 @@ export default function Home() {
     link.click();
     setShowDownloadPopup(false); // Close popup after download
   };
-  const testimonials = [
-    {
-      name: "Dipak",
-      role: "Data Analytic @ TCS",
-      text: "The Data Analytics course provided a perfect blend of theory and hands-on practice. The real-world projects helped me build a portfolio that I now proudly showcase during job interviews.",
-    },
-    {
-      name: "Sakshi",
-      role: "Data Analytic @ TCS",
-      text: "I had no prior experience in analytics, but this course made it approachable and even exciting. The instructor’s clear explanations and practical examples made all the difference.",
-    },
-    {
-      name: "Ovi",
-      role: "Data Analytic @ TCS",
-      text: "The modules on Excel, SQL, and Python were incredibly helpful. I now feel confident in using data to make informed decisions at work.",
-    },
-  ];
+
 
   // FAQ Data Array
   const faqData = [
@@ -72,49 +56,6 @@ export default function Home() {
 
 
   const [openIndex, setOpenIndex] = useState(null); // initialize state properly
-
-  // useEffect(() => {
-  //   setShowFormPopup(true);
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setShowFormPopup(entry.isIntersecting);
-  //     },
-  //     {
-  //       threshold: 0.5,
-  //     }
-  //   );
-
-  //   if (whySectionRef.current) {
-  //     observer.observe(whySectionRef.current);
-  //   }
-
-  //   return () => {
-  //     if (whySectionRef.current) {
-  //       observer.unobserve(whySectionRef.current);
-  //     }
-  //   };
-  // }, []);
-  const whySectionRef = useRef(null);
-  // useEffect(() => {
-  //   setShowFormPopup(true); // show on page load
-
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       setShowFormPopup(entry.isIntersecting);
-  //     },
-  //     { threshold: 0.30 }
-  //   );
-
-  //   if (whySectionRef.current) {
-  //     observer.observe(whySectionRef.current);
-  //   }
-
-  //   return () => {
-  //     if (whySectionRef.current) {
-  //       observer.unobserve(whySectionRef.current);
-  //     }
-  //   };
-  // }, []);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 800) { // Adjust value as needed
@@ -240,9 +181,9 @@ export default function Home() {
           <div className="col-md-6 text-center hover-container">
             <img src={mobileImg} alt="mobile dashboard" className="main-image img-fluid" />
 
-            <img src={leftImg1} alt="left image 1" className="side-image left-image one" />
-            <img src={leftImg2} alt="left image 2" className="side-image left-image two" />
-            <img src={rightImg} alt="right image" className="side-image right-image" />
+            <img src={leftImg1} alt="left " className="side-image left-image one" />
+            <img src={leftImg2} alt="left " className="side-image left-image two" />
+            <img src={rightImg} alt="right" className="side-image right-image" />
           </div>
           {/* <div className="col-md-6 text-center">
             <img src={mobileImg} alt="mobile dashboard" className="img-fluid" style={{ maxWidth: '190px' }} />
@@ -433,7 +374,7 @@ export default function Home() {
               {/* Hover content (initially hidden) */}
               <div className="hover-overlay">
                 {/* <p>With 8+ years in analytics, Priya brings real-world business intelligence into every session.</p> */}
-                <a href="#" className="linkedin-link">
+                <a href="/" className="linkedin-link">
                   <img src="/linkedin-icon.png" alt="LinkedIn" className="linkedin-icon" />
                   Connect on LinkedIn
                 </a>

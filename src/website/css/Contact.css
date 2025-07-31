@@ -1,135 +1,99 @@
-/* src/styles/Courses.css */
+/* General layout */
 .header-section {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 4rem 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    /* background-color: #262626; */
-    color: #262626;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #262626;
 }
 
 @media (min-width: 768px) {
-    .header-section {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .header-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
-.header-left {
-    flex: 1;
-}
-
+.header-left,
 .header-right {
-    flex: 1;
-    color: #4b5563;
-    /* Tailwind gray-600 */
-    font-size: 1rem;
-    line-height: 1.75rem;
+  flex: 1;
 }
 
 .course-description {
-    font-family: 'Be Vietnam Pro', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0;
-    color: #262626;
-    margin: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #262626;
+  margin: 0;
 }
 
 .form-label {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .contact-card-wrapper {
-    height: 766px;
-    border-radius: 12px;
-    opacity: 1;
-
-    padding: 4rem;
-    background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: auto;
+  border-radius: 12px;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
 }
 
-/* Optional - Improve spacing between main sections */
-.header-section,
-.contact-card-wrapper {
-    margin-bottom: 3rem;
+@media (min-width: 768px) {
+  .contact-card-wrapper {
+    padding: 3rem;
+  }
 }
 
+/* === Map Section === */
 .map-container {
   position: relative;
-  display: inline-block;
-}
-
-/* Hover transition between map images */
-.default-img,
-.hover-img {
-  transition: opacity 0.3s ease;
-}
-
-.hover-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-.map-container {
-  position: relative;
-  display: inline-block;
   width: 100%;
   max-width: 800px;
   height: auto;
+  margin-top: 2rem;
 }
 
-
-/* .map-container {
-  position: relative;
-  display: inline-block;
-} */
-
-/* Default map image stays visible always */
 .default-img {
   display: block;
   width: 100%;
   height: auto;
   z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
-/* Student images initially hidden and positioned absolutely */
 .student-img {
   position: absolute;
-  width: 211.24px;
-  height: 214.08px;
+  width: 215px;
+  height: auto;
   opacity: 0;
   z-index: 2;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Slide from left */
 .student1,
 .student5 {
   transform: translateX(-50px);
 }
 
-/* Slide from right */
 .student2,
 .student3,
 .student4 {
   transform: translateX(50px);
 }
 
-/* On hover: reveal and animate to original position */
 .map-container:hover .student-img {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* Position each student */
+/* Specific student image positions */
 .student1 {
   top: 38px;
   left: 95px;
@@ -153,4 +117,72 @@
 .student5 {
   top: 260px;
   left: 223px;
+}
+
+/* Responsive student image scaling and repositioning */
+@media (max-width: 991px) {
+  .student-img {
+    width: 120px;
+  }
+
+  .student1 {
+    top: 30px;
+    left: 60px;
+  }
+
+  .student2 {
+    top: 180px;
+    left: 0px;
+  }
+
+  .student3 {
+    top: 230px;
+    left: 60px;
+  }
+
+  .student4 {
+    top: 350px;
+    left: 90px;
+  }
+
+  .student5 {
+    top: 220px;
+    left: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-section {
+    padding: 2rem 1rem;
+  }
+
+  .contact-card-wrapper {
+    padding: 1.5rem;
+  }
+
+  .student-img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .student-img {
+    display: none; /* Hide students on very small screens for clarity */
+  }
+
+  .course-description {
+    font-size: 14px;
+  }
+
+  .form-label {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .map-container {
+    margin-top: 1rem;
+  }
 }

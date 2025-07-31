@@ -138,19 +138,23 @@
 
 /* ✅ Mobile responsive */
 @media (max-width: 768px) {
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    /* stack cards */
+  .achievements-header,
+  .goals-header {
+    margin: 0 auto 30px 20px;
+    text-align: center;
   }
 
-  .achievements-header h2 {
-    font-size: 24px;
+  .achievements-header h2,
+  .goals-header h2 {
+    font-size: 22px;
   }
 
-  .achievement-card {
-    padding: 20px;
+  .achievements-header p,
+  .goals-header p {
+    font-size: 15px;
   }
 }
+
 .achievements-footer {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 400;
@@ -287,7 +291,7 @@
   }
 }
 
-
+/* 
 .cta-section {
   width: 1347px;
   height: 274px;
@@ -303,15 +307,27 @@
   position: relative;
   gap: 300px;
   overflow: hidden;
-  padding: 60px 80px 40px 100px; /* top right bottom left */
+  padding: 60px 80px 40px 100px; /* top right bottom left
 
+} */
+.cta-section {
+  width: 100%;
+  border-radius: 10px;
+  padding: 60px 80px 40px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
 }
-
 .cta-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
   width: 100%;
+  max-width: 1200px;
 }
 
 .cta-text {
@@ -338,8 +354,8 @@
 }
 
 .cta-image {
-  width:  482px;
-  height:  275px;
+  width: 482px;
+  height: auto;
   position: absolute;
   right: 117px;
   top: 50%;
@@ -378,14 +394,36 @@
 
 /* ✅ Mobile Responsive */
 @media (max-width: 768px) {
+  .cta-section {
+    padding: 40px 20px;
+    height: auto;
+  }
+
   .cta-content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
     gap: 20px;
   }
 
   .cta-text h2 {
     font-size: 24px;
+  }
+
+  .cta-text p {
+    font-size: 15px;
+  }
+
+  .cta-image {
+    position: static;
+    transform: none;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  .cta-btn {
+    margin-top: 10px;
   }
 }
 .achievement-icon {
@@ -399,4 +437,10 @@
   border-radius: 6px;
   padding: 14px;
   font-size: 24px; /* Icon size */
+}
+@media (max-width: 768px) {
+  .achievement-card {
+    width: 100%;
+    height: auto;
+  }
 }
