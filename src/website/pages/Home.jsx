@@ -21,7 +21,7 @@ export default function Home() {
   const [showDownloadPopup, setShowDownloadPopup] = useState(false);
   const [showFormPopup, setShowFormPopup] = useState(false);
 
-  const whySectionRef = useRef(null);
+
   const handleDownload = () => {
     const link = document.createElement('a');
     link.href = '/brochure.pdf'; // 🔁 Put the correct PDF path here
@@ -71,28 +71,79 @@ export default function Home() {
   ];
 
 
-  const [openIndex, setOpenIndex] = useState(
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setShowFormPopup(entry.isIntersecting);
-        },
-        {
-          threshold: 0.5,
-        }
-      );
+  const [openIndex, setOpenIndex] = useState(null); // initialize state properly
 
-      if (whySectionRef.current) {
-        observer.observe(whySectionRef.current);
+  // useEffect(() => {
+  //   setShowFormPopup(true);
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setShowFormPopup(entry.isIntersecting);
+  //     },
+  //     {
+  //       threshold: 0.5,
+  //     }
+  //   );
+
+  //   if (whySectionRef.current) {
+  //     observer.observe(whySectionRef.current);
+  //   }
+
+  //   return () => {
+  //     if (whySectionRef.current) {
+  //       observer.unobserve(whySectionRef.current);
+  //     }
+  //   };
+  // }, []);
+  const whySectionRef = useRef(null);
+  // useEffect(() => {
+  //   setShowFormPopup(true); // show on page load
+
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       setShowFormPopup(entry.isIntersecting);
+  //     },
+  //     { threshold: 0.30 }
+  //   );
+
+  //   if (whySectionRef.current) {
+  //     observer.observe(whySectionRef.current);
+  //   }
+
+  //   return () => {
+  //     if (whySectionRef.current) {
+  //       observer.unobserve(whySectionRef.current);
+  //     }
+  //   };
+  // }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 800) { // Adjust value as needed
+        setShowFormPopup(true);
+        window.removeEventListener('scroll', handleScroll); // Trigger only once
       }
+    };
 
-      return () => {
-        if (whySectionRef.current) {
-          observer.unobserve(whySectionRef.current);
-        }
-      };
-    }, [])
-  );
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (showFormPopup) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showFormPopup]);
+
+
   const navigate = useNavigate();
 
   const handleExploreClick = () => {
@@ -127,9 +178,8 @@ export default function Home() {
               Download Free Syllabus
             </button>
 
-          </div>
 
-          {/* Animated Bottom Content */}
+          </div>
           <div className="bottom-info d-flex justify-content-between align-items-end">
             <div className="info-text text-start">
               <p className="custom-paragraph m-0">
@@ -200,7 +250,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="why-section" ref={whySectionRef}>
+      <section className="why-section">
         <h2>Why You'll Love This Course</h2>
 
         <div className="why-grid">
@@ -244,7 +294,35 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+
       </section>
+      {showFormPopup && (
+        <div className="overlay-form">
+          <div className="form-popup">
+            <button className="close-btn" onClick={() => setShowFormPopup(false)}>&times;</button>
+            <h4 className="form-title">✅ Ready to Learn Something New?</h4>
+            <p className="form-subtitle">Get updates, tips & resources!</p>
+
+            <div className="form-grid">
+              <input type="text" placeholder="Enter Your Full Name" />
+              <input type="text" placeholder="Enter Your Phone No." />
+              <input type="email" placeholder="Enter Your Email" />
+              <select>
+                <option>Choose your course</option>
+                <option>Data Analytics</option>
+                <option>SAP</option>
+                <option>CAD/CAE</option>
+              </select>
+            </div>
+
+            <div className="form-actions">
+              <button className="btn btn-secondary">Cancel</button>
+              <button className="btn btn-warning">Confirm</button>
+            </div>
+          </div>
+        </div>)}
+
 
       <div className="courses-section">
         <h2>Our Courses</h2>
@@ -294,9 +372,9 @@ export default function Home() {
           ))}
         </div>
       </div>
-      {showDownloadPopup  && (
-        <div className="overlay-form">
-          <div className="form-popup">
+      {showDownloadPopup && (
+        <div className="form-popupdownload-wrapper">
+          <div className="form-popupdownload">
             <button className="close-btn" onClick={() => setShowDownloadPopup(false)}>
               &times;
             </button>
@@ -323,32 +401,6 @@ export default function Home() {
           </div>
         </div>
       )}
-      {showFormPopup  && (
-        <div className="overlay-form">
-          <div className="form-popup">
-            <button className="close-btn" onClick={() => setShowFormPopup(false)}>&times;</button>
-            <h4 className="form-title">✅ Ready to Learn Something New?</h4>
-            <p className="form-subtitle">Get updates, tips & resources!</p>
-
-            <div className="form-grid">
-              <input type="text" placeholder="Enter Your Full Name" />
-              <input type="text" placeholder="Enter Your Phone No." />
-              <input type="email" placeholder="Enter Your Email" />
-              <select>
-                <option>Choose your course</option>
-                <option>Data Analytics</option>
-                <option>SAP</option>
-                <option>CAD/CAE</option>
-              </select>
-            </div>
-
-            <div className="form-actions">
-              <button className="btn btn-secondary">Cancel</button>
-              <button className="btn btn-warning">Confirm</button>
-            </div>
-          </div>
-        </div>)}
-
       <section className="mentors-section">
         <h2 className="mentors-title">Meet Your Mentors</h2>
 
@@ -660,10 +712,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
-
     </div>
 
 
