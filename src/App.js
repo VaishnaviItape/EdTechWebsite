@@ -3,6 +3,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './auth/Login';
 import Dashboard from './admin-dash/pages/Dashboard';
+import ContactUs from './admin-dash/pages/ContactUs';
 import PrivateRoute from './auth/PrivateRoute';
 import Home from './website/pages/Home'
 import './App.css';
@@ -15,6 +16,8 @@ import SignUpPage from './website/pages/Sign-up'
 import ViewCourses from './website/pages/ViewCourses';
 import ViewCoursessap from './website/pages/ViewCoursessap';
 import ViewCoursescda from './website/pages/ViewCoursescda';
+import DashboardLayout from './admin-dash/pages/DashboardLayout'; // Adjust path
+
 function App() {
   return (
     <Router>
@@ -26,15 +29,20 @@ function App() {
         <Route path="/courses" element={<Layout><Courses /></Layout>} />
         <Route path="/new-login" element={<Layout><LoginPage /></Layout>} />
         <Route path="/new-register" element={<Layout><SignUpPage /></Layout>} />
-        <Route path="/view-course" element={<ViewCourses />} />
-          <Route path="/view-coursesap" element={<ViewCoursessap />} />
-              <Route path="/view-coursescda" element={<ViewCoursescda />} />
+        <Route path="/view-course" element={<Layout><ViewCourses /></Layout>} />
+        <Route path="/view-coursesap" element={<Layout><ViewCoursessap /></Layout>} />
+        <Route path="/view-coursescda" element={<Layout><ViewCoursescda /></Layout>} />
         {/* Auth pages without layout (optional) */}
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
 
         {/* admin dashboard pages without layout (optional) */}
-        <Route path="/admin*" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        {/* Admin dashboard pages with layout */}
+        <Route
+          path="/admin"
+          element={<PrivateRoute><DashboardLayout><Dashboard /></DashboardLayout></PrivateRoute>}
+        />
+       <Route path="/contactus" element={<PrivateRoute><DashboardLayout><ContactUs /></DashboardLayout></PrivateRoute>} />
       </Routes>
     </Router>
   );

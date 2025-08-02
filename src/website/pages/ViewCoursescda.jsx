@@ -44,12 +44,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">01</h5>
-                        <p className="fw-bold">Introduction to Design & Drafting Tools</p>
+                        <p className="fw-bold">CAD 2D Basics</p>
                         <ul className="list-unstyled small">
-                            <li>Overview of CAD/CAE & Industry Use Cases<span className="text-muted">Core Lesson</span></li>
-                            <li>AutoCAD Basics – Interface, Tools, Layers<span className="text-muted">Hands-On</span></li>
-                            <li>2D Drawing & Dimensioning Techniques<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Floor Plan Drafting<span className="text-muted">Project</span></li>
+                            <li>AutoCAD Basics – Interface, Tools, Layers<span className="text-muted">Core Lesson</span></li>
+                            <li>2D Drafting – Shapes, Dimensioning<span className="text-muted">Hands-On</span></li>
+                            <li>Editing – Blocks, Templates<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – 2D Drawing<span className="text-muted">Project</span></li>
                         </ul>
 
                     </div>
@@ -60,12 +60,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">02</h5>
-                        <p className="fw-bold">3D Modelling with SolidWorks / CATIA</p>
+                        <p className="fw-bold">3D Modeling</p>
                         <ul className="list-unstyled small">
-                            <li>3D Concepts & Parametric Modeling<span className="text-muted">Core Lesson</span></li>
-                            <li>Part Design & Assembly Tools<span className="text-muted">Hands-On</span></li>
-                            <li>Creating Technical Drawings from 3D Models<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Mechanical Assembly Design<span className="text-muted">Project</span></li>
+                            <li>SolidWorks/CATIA – 3D Basics<span className="text-muted">Core Lesson</span></li>
+                            <li>Part/Assembly – Constraints<span className="text-muted">Hands-On</span></li>
+                            <li>Surface Modeling – Sheet Metal<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – 3D Assembly<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -74,12 +74,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">03</h5>
-                        <p className="fw-bold">Advanced CAD Features & Surface Modeling</p>
+                        <p className="fw-bold">Product Design</p>
                         <ul className="list-unstyled small">
-                            <li>Sketching Constraints & Feature Tools<span className="text-muted">Core Lesson</span></li>
-                            <li>Surface Modeling & Sheet Metal Design<span className="text-muted">Hands-On</span></li>
-                            <li>Working with Complex Assemblies<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Product Design Draft<span className="text-muted">Project</span></li>
+                            <li>Assembly – Exploded View<span className="text-muted">Core Lesson</span></li>
+                            <li>BOM – Drafting<span className="text-muted">Hands-On</span></li>
+                            <li>Sheet Metal – Flat Patterns<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Detail Drawing<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -88,12 +88,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">04</h5>
-                        <p className="fw-bold">Introduction to CAE – Simulation & Analysis</p>
+                        <p className="fw-bold">CAE Fundamentals</p>
                         <ul className="list-unstyled small">
-                            <li>Basics of CAE, FEA & Analysis Tools<span className="text-muted">Core Lesson</span></li>
-                            <li>Stress, Strain & Boundary Conditions<span className="text-muted">Hands-On</span></li>
-                            <li>Running Simulations in ANSYS or SolidWorks<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Static Structural Analysis<span className="text-muted">Project</span></li>
+                            <li>ANSYS/Hypermesh – FEA Setup<span className="text-muted">Core Lesson</span></li>
+                            <li>Meshing – 2D/3D Geometries<span className="text-muted">Hands-On</span></li>
+                            <li>Analysis – Static, Modal, Thermal<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – FEA<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -101,12 +101,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">05</h5>
-                        <p className="fw-bold">Real-World Applications & Industry Standards</p>
+                        <p className="fw-bold">CAM & CNC</p>
                         <ul className="list-unstyled small">
-                            <li>Design for Manufacturing (DFM) Basics<span className="text-muted">Core Lesson</span></li>
-                            <li>Industry Standards, GD&T & Tolerances<span className="text-muted">Hands-On</span></li>
-                            <li>Working on Client-Spec Requirements<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Reverse Engineering Challenge<span className="text-muted">Project</span></li>
+                            <li>CAM Intro – Toolpaths<span className="text-muted">Core Lesson</span></li>
+                            <li>CNC Basics – Milling/Turning<span className="text-muted">Hands-On</span></li>
+                            <li>Simulation – G-code<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – CAM Process<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -114,12 +114,12 @@ export default function ViewCoursescda() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">06</h5>
-                        <p className="fw-bold">Capstone Project & Career Preparation</p>
+                        <p className="fw-bold">Integration & Career</p>
                         <ul className="list-unstyled small">
-                            <li>Project Planning & Tool Selection<span className="text-muted">Core Lesson</span></li>
-                            <li>CAD Modeling + CAE Integration<span className="text-muted">Hands-On</span></li>
-                            <li>Capstone Project – Full Product Lifecycle<span className="text-muted">Practice Session</span></li>
-                            <li>Portfolio Finalization & Interview Prep<span className="text-muted">Project</span></li>
+                            <li>Workflow – CAD/CAE/CAM<span className="text-muted">Core Lesson</span></li>
+                            <li>Capstone Project – Product Design<span className="text-muted">Hands-On</span></li>
+                            <li>Resume – Portfolio Creation<span className="text-muted">Practice Session</span></li>
+                            <li>Mock Interviews – Career Prep<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>

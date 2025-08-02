@@ -4,5 +4,6 @@ export default function Header() {
     <nav className="navbar bg-white shadow px-4">
       <span className="navbar-brand">Dashboard</span>
     </nav>
+    
   );
 }

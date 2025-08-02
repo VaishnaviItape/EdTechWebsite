@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <>
       {/* 🔶 Top Orange Promo Banner */}
-      <div
+      {/* <div
         style={{
           backgroundColor: '#f97316', // Tailwind warning color or use "#ff7a00"
           color: 'white',
@@ -19,8 +19,22 @@ export default function Navbar() {
         }}
       >
         Early Bird Discount Ends Tonight! ★ Start Your Data Science Journey Today →
-      </div>
-
+      </div> */}
+<Link to="/contact" style={{ textDecoration: 'none' }}>
+  <div
+    style={{
+      backgroundColor: '#f97316',
+      color: 'white',
+      textAlign: 'center',
+      padding: '6px 10px',
+      fontSize: '14px',
+      fontWeight: '600',
+      cursor: 'pointer',
+    }}
+  >
+    Early Bird Discount Ends Tonight! ★ Start Your Data Science Journey Today →
+  </div>
+</Link>
       {/* 🧭 Main Navbar */}
       <nav
         className="navbar navbar-expand-lg bg-white shadow-sm px-4 py-3"

@@ -1,7 +1,7 @@
 // src/components/Sidebar.jsx
 import { FaHome, FaSignOutAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-
+import { FaPhoneAlt } from 'react-icons/fa'
 export default function Sidebar() {
   const navigate = useNavigate();
 
@@ -17,6 +17,13 @@ export default function Sidebar() {
         <li className="nav-item">
           <a className="nav-link text-white" href="/"><FaHome /> Dashboard</a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link text-white d-flex align-items-center" href="/contactus">
+            <FaPhoneAlt className="me-2" />
+            Contact Us
+          </a>
+        </li>
+
         <li className="nav-item mt-3">
           <button className="btn btn-sm btn-danger w-100" onClick={handleLogout}>
             <FaSignOutAlt /> Logout

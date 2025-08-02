@@ -44,12 +44,12 @@ export default function ViewCourses() {
                 <div className="col-md-6">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">01</h5>
-                        <p className="fw-bold">Introduction to Data Analytics & Excel Skills</p>
+                        <p className="fw-bold">Data Analytics Basics & Excel </p>
                         <ul className="list-unstyled small">
-                            <li>What is Data Analytics? & Career Paths<span className="text-muted">Core Lesson</span></li>
-                            <li>Excel Basics – Formulas, Tables, Charts <span className="text-muted">Hands-On</span></li>
-                             <li>Data Cleaning & Sorting Techniques <span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Marketing Campaign Analysis <span className="text-muted">Project</span></li>
+                            <li>Data Analytics Overview – Concepts<span className="text-muted">Core Lesson</span></li>
+                            <li>Excel Formulas – Functions & Logic<span className="text-muted">Hands-On</span></li>
+                             <li>Excel Visualization – Charts, Graphs<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Sales Data Excel<span className="text-muted">Project</span></li>
                         </ul>
 
                     </div>
@@ -60,9 +60,9 @@ export default function ViewCourses() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">02</h5>
-                        <p className="fw-bold">SQL for Data Handling</p>
+                        <p className="fw-bold">Advanced Excel</p>
                         <ul className="list-unstyled small">
-                            <li>Descriptive Statistics in Excel <span className="text-muted">Core Lesson</span></li>
+                            <li>Data Cleaning – Sorting, Filtering<span className="text-muted">Core Lesson</span></li>
                             <li>Working with Large Datasets <span className="text-muted">Hands-On</span></li>
                             <li>Advanced Excel Features <span className="text-muted">Practice Session</span></li>
                             <li>Mini Project - Marketing Campaign Analysis <span className="text-muted">Project</span></li>
@@ -74,12 +74,12 @@ export default function ViewCourses() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">03</h5>
-                        <p className="fw-bold">Introduction to SQL for Data Analysis</p>
+                        <p className="fw-bold">SQL for Data Analysis</p>
                         <ul className="list-unstyled small">
-                            <li>Getting Started with Databases <span className="text-muted">Core Lesson</span></li>
-                            <li>Basic SQL Queries <span className="text-muted">Hands-On</span></li>
-                            <li>Intermediate SQL <span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project - Customer Order Database <span className="text-muted">Project</span></li>
+                            <li>SQL Basics – SELECT, Filters<span className="text-muted">Core Lesson</span></li>
+                            <li>Joins & Data Import/Export<span className="text-muted">Hands-On</span></li>
+                            <li>SQL Data Management – Update, Delete <span className="text-muted">Practice Session</span></li>
+                            <li> Mini Project – SQL Database <span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -88,12 +88,12 @@ export default function ViewCourses() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">04</h5>
-                        <p className="fw-bold">Python for Data Analysis</p>
+                        <p className="fw-bold">Power BI & Dashboards</p>
                         <ul className="list-unstyled small">
-                            <li>Python Basics for Analysts<span className="text-muted">Core Lesson</span></li>
-                            <li>Using Tableau or Power BI <span className="text-muted">Hands-On</span></li>
-                            <li>Building Interactive Dashboards <span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project - Business KPI Dashboard <span className="text-muted">Project</span></li>
+                            <li>Power BI Intro – Data Connect<span className="text-muted">Core Lesson</span></li>
+                            <li>Data Visuals – Charts, Tables<span className="text-muted">Hands-On</span></li>
+                            <li>Interactive Dashboards – Setup<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Power BI Report<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -103,10 +103,10 @@ export default function ViewCourses() {
                         <h5 className="text-orange fw-bold">05</h5>
                         <p className="fw-bold">Python for Data Analysis</p>
                         <ul className="list-unstyled small">
-                            <li>Principles of Data Visualization <span className="text-muted">Core Lesson</span></li>
-                            <li>Data Manipulation with Pandas <span className="text-muted">Hands-On</span></li>
-                            <li>Working with Real-World Datasets<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Retail Data Analysis <span className="text-muted">Project</span></li>
+                            <li>Python Setup – Syntax, Data Types<span className="text-muted">Core Lesson</span></li>
+                            <li> Data Analysis – Pandas, Numpy<span className="text-muted">Hands-On</span></li>
+                            <li>Data Cleaning – Scripts, Methods<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Data Insights<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -114,12 +114,12 @@ export default function ViewCourses() {
                  <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">06</h5>
-                        <p className="fw-bold">Capstone Project & Career Preparation</p>
+                        <p className="fw-bold">Capstone & Career Prep</p>
                         <ul className="list-unstyled small">
-                            <li>Project Planning & Data Sourcing<span className="text-muted">Core Lesson</span></li>
-                            <li>Project Planning & Data Sourcing <span className="text-muted">Hands-On</span></li>
-                            <li>Analysis, Visualization & Storytelling <span className="text-muted">Practice Session</span></li>
-                            <li>Presentation & Portfolio Building<span className="text-muted">Project</span></li>
+                            <li> Capstone Project – Data Pipeline<span className="text-muted">Core Lesson</span></li>
+                            <li>Resume – Portfolio <span className="text-muted">Hands-On</span></li>
+                            <li>Mock Interviews – Q&A<span className="text-muted">Practice Session</span></li>
+                            <li>Final Presentation – Feedback<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>

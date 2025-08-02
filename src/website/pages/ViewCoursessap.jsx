@@ -44,12 +44,12 @@ export default function ViewCoursessap() {
                 <div className="col-md-6">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">01</h5>
-                        <p className="fw-bold">Introduction to SAP & ERP Fundamentals</p>
+                         <p className="fw-bold">AP Basics & Navigation</p>
                         <ul className="list-unstyled small">
-                            <li>Understanding ERP & SAP Overview<span className="text-muted">Core Lesson</span></li>
-                            <li>SAP System Navigation & User Interface<span className="text-muted">Hands-On</span></li>
-                             <li>Organizational Structure in SAP <span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Company & Chart of Accounts Setup <span className="text-muted">Project</span></li>
+                            <li>SAP Intro – ERP, Modules<span className="text-muted">Core Lesson</span></li>
+                            <li>System Navigation – User Roles<span className="text-muted">Hands-On</span></li>
+                            <li>Master Data – SAP Setup<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Logins & Transactions<span className="text-muted">Project</span></li>
                         </ul>
 
                     </div>
@@ -60,12 +60,12 @@ export default function ViewCoursessap() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">02</h5>
-                        <p className="fw-bold">SAP Financial Accounting (FI) – Basics</p>
+                        <p className="fw-bold">SAP FICO</p>
                         <ul className="list-unstyled small">
-                            <li>General Ledger & Account Groups<span className="text-muted">Core Lesson</span></li>
-                            <li>Posting Transactions & Journal Entries <span className="text-muted">Hands-On</span></li>
-                            <li>Accounts Payable & Receivable Basics<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Vendor & Customer Transactions<span className="text-muted">Project</span></li>
+                            <li>GL Accounting – Structure<span className="text-muted">Core Lesson</span></li>
+                            <li>AP/AR Processes – Invoicing<span className="text-muted">Hands-On</span></li>
+                            <li>Cost Center – Internal Orders<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Journal Entries<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -74,12 +74,12 @@ export default function ViewCoursessap() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">03</h5>
-                        <p className="fw-bold">SAP Controlling (CO) – Cost Management</p>
+                        <p className="fw-bold">SAP MM</p>
                         <ul className="list-unstyled small">
-                            <li>Cost Centers & Internal Orders<span className="text-muted">Core Lesson</span></li>
-                            <li>Cost Element Accounting<span className="text-muted">Hands-On</span></li>
-                            <li>Cost Allocations & Reporting<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Cost Tracking Setup<span className="text-muted">Project</span></li>
+                            <li>Procurement – Purchase Orders<span className="text-muted">Core Lesson</span></li>
+                            <li>Inventory – Stock Overview<span className="text-muted">Hands-On</span></li>
+                            <li>Material Master Data – Setup<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Procurement Flow<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -88,12 +88,12 @@ export default function ViewCoursessap() {
                 <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">04</h5>
-                        <p className="fw-bold">SAP Materials Management (MM)</p>
+                        <p className="fw-bold">SAP SD</p>
                         <ul className="list-unstyled small">
-                            <li>Procure-to-Pay Cycle<span className="text-muted">Core Lesson</span></li>
-                            <li>Material & Vendor Master Data<span className="text-muted">Hands-On</span></li>
-                            <li>Purchase Orders & Goods Receipt<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – P2P Cycle Simulation<span className="text-muted">Project</span></li>
+                            <li>Sales Process – Order Cycle<span className="text-muted">Core Lesson</span></li>
+                            <li>Delivery & Billing Basics<span className="text-muted">Hands-On</span></li>
+                            <li>Pricing – Availability Check<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – Order to Cash<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -101,12 +101,12 @@ export default function ViewCoursessap() {
                  <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">05</h5>
-                        <p className="fw-bold">Python for Data Analysis</p>
+                        <p className="fw-bold">SAP ABAP</p>
                         <ul className="list-unstyled small">
-                            <li>Introduction to SAP HANA<span className="text-muted">Core Lesson</span></li>
-                            <li>Using HANA Studio<span className="text-muted">Hands-On</span></li>
-                            <li>Real-Time Analytics in SAP<span className="text-muted">Practice Session</span></li>
-                            <li>Mini Project – Financial Dashboard in HANA<span className="text-muted">Project</span></li>
+                            <li>ABAP Basics – Structure, Syntax<span className="text-muted">Core Lesson</span></li>
+                            <li>Data Dictionary – Tables<span className="text-muted">Hands-On</span></li>
+                            <li>Reports – Simple Programs<span className="text-muted">Practice Session</span></li>
+                            <li>Mini Project – ABAP Report<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
@@ -114,12 +114,12 @@ export default function ViewCoursessap() {
                  <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">06</h5>
-                        <p className="fw-bold">SAP HANA & Real-Time Reporting</p>
+                        <p className="fw-bold">Integration & Career</p>
                         <ul className="list-unstyled small">
-                            <li>Project Planning & Scope Definition<span className="text-muted">Core Lesson</span></li>
-                            <li>System Configuration & Testing<span className="text-muted">Hands-On</span></li>
-                            <li>End-to-End Capstone Project<span className="text-muted">Practice Session</span></li>
-                            <li>Resume Building & Interview Practice<span className="text-muted">Project</span></li>
+                            <li>Modules Integration – Examples<span className="text-muted">Core Lesson</span></li>
+                            <li>Resume – SAP Portfolio<span className="text-muted">Hands-On</span></li>
+                            <li>Mock Interviews – SAP Focus<span className="text-muted">Practice Session</span></li>
+                            <li>Capstone Project – Presentation<span className="text-muted">Project</span></li>
                         </ul>
                     </div>
                 </div>
