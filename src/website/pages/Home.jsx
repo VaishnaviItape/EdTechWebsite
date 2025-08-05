@@ -1,5 +1,6 @@
 
-import heroImg from '../../images/young-pretty-woman-looking.png';
+import heroImg from '../../images/Hero Image.png';
+
 import ellipseImg from '../../images/Ellipse 2.png';
 import Vector from '../../images/Vector_Animation.png';
 import mobileImg from '../../images/iPhone Space Deep Purple Front 1.png';

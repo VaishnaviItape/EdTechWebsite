@@ -1,6 +1,6 @@
 import React from 'react';
 import courseImage from '../../images/Container (2).png';
-
+import courseVideo from '../../images/CAD.mp4';
 import '../../website/css/viewcourses.css';
 
 export default function ViewCoursescda() {
@@ -24,15 +24,15 @@ export default function ViewCoursescda() {
 
             {/* === Video Preview Section === */}
             <div className="video-preview mb-5 position-relative">
-                <img
-                    src={courseImage}
-                    alt="Data Analytics Course Preview"
+                <video
                     className="img-fluid rounded shadow-sm"
-                />
-                {/* Play Icon Overlay */}
-                <div className="play-icon position-absolute top-50 start-50 translate-middle">
-                    <span style={{ fontSize: '3rem', color: '#fff' }}>&#9658;</span>
-                </div>
+                    controls
+                    poster={courseImage} // Optional thumbnail before play
+                >
+                    <source src={courseVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
             </div>
 
             {/* === Monthly Breakdown Heading === */}

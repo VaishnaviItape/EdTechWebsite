@@ -1,5 +1,7 @@
 import React from 'react';
 import courseImage from '../../images/Container (1).png';
+import courseVideo from '../../images/Sap-erp.mp4';
+
 
 import '../../website/css/viewcourses.css';
 
@@ -15,7 +17,7 @@ export default function ViewCoursessap() {
                     </div>
                     <div className="header-right">
                         <p className="course-description">
-                        Master core SAP modules like FICO, MM, and HANA. Learn how to manage business processes in finance, procurement, and reporting through real-world ERP simulations and hands-on SAP training.
+                            Master core SAP modules like FICO, MM, and HANA. Learn how to manage business processes in finance, procurement, and reporting through real-world ERP simulations and hands-on SAP training.
                         </p>
                     </div>
                 </div>
@@ -24,15 +26,24 @@ export default function ViewCoursessap() {
 
             {/* === Video Preview Section === */}
             <div className="video-preview mb-5 position-relative">
-                <img
+                <video
+                    className="img-fluid rounded shadow-sm"
+                    controls
+                    poster={courseImage} // Optional thumbnail before play
+                >
+                    <source src={courseVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
+                {/* <img
                     src={courseImage}
                     alt="Data Analytics Course Preview"
                     className="img-fluid rounded shadow-sm"
-                />
+                /> */}
                 {/* Play Icon Overlay */}
-                <div className="play-icon position-absolute top-50 start-50 translate-middle">
+                {/* <div className="play-icon position-absolute top-50 start-50 translate-middle">
                     <span style={{ fontSize: '3rem', color: '#fff' }}>&#9658;</span>
-                </div>
+                </div> */}
             </div>
 
             {/* === Monthly Breakdown Heading === */}
@@ -44,7 +55,7 @@ export default function ViewCoursessap() {
                 <div className="col-md-6">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">01</h5>
-                         <p className="fw-bold">AP Basics & Navigation</p>
+                        <p className="fw-bold">AP Basics & Navigation</p>
                         <ul className="list-unstyled small">
                             <li>SAP Intro – ERP, Modules<span className="text-muted">Core Lesson</span></li>
                             <li>System Navigation – User Roles<span className="text-muted">Hands-On</span></li>
@@ -98,7 +109,7 @@ export default function ViewCoursessap() {
                     </div>
                 </div>
 
-                 <div className="col-md-6 ">
+                <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">05</h5>
                         <p className="fw-bold">SAP ABAP</p>
@@ -111,7 +122,7 @@ export default function ViewCoursessap() {
                     </div>
                 </div>
 
-                 <div className="col-md-6 ">
+                <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">06</h5>
                         <p className="fw-bold">Integration & Career</p>

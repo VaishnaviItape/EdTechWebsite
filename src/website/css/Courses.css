@@ -175,6 +175,12 @@
   color: #1f2937;
   /* Tailwind gray-900 */
 }
+.course-banner-image {
+  width: 100%;
+  max-height: 200px; /* Adjust if needed */
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 .course-card p {
   font-size: 0.875rem;
@@ -182,7 +188,7 @@
   /* Tailwind gray-600 */
 }
 
-/* Images Section */
+/* Images Section *
 .custom-container {
   display: flex;
   flex-direction: column;

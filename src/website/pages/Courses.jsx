@@ -1,15 +1,10 @@
 // src/pages/Courses.jsx
 import React from 'react';
-import dataAnalyticsImg from '../../images/Image (1).png';
-import dataAnalyticsImg1 from '../../images/Image (2).png';
-import dataAnalyticsImg3 from '../../images/Image (3).png';
 
-import sapImg1 from '../../images/Image (4).png';
-import sapImg2 from '../../images/Image (5).png';
-import sapImg3 from '../../images/Image (10).png';
-import sapImg4 from '../../images/Image (6).png';
-import sapImg5 from '../../images/Image (7).png';
-import sapImg6 from '../../images/Image (8).png';
+import Courses1 from '../../images/Courses1.png';
+import Courses2 from '../../images/Courses2.png';
+import Courses3 from '../../images/Courses3.png';
+
 import '../../website/css/Courses.css'; // ✅ CSS is imported
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +17,7 @@ export default function Courses() {
   const handleViewCourse1 = () => {
     navigate('/view-coursesap'); // navigate to the ViewCourses page
   };
-    const handleViewCourse2 = () => {
+  const handleViewCourse2 = () => {
     navigate('/view-coursescda'); // navigate to the ViewCourses page
   };
 
@@ -64,20 +59,16 @@ export default function Courses() {
           <img src={dataAnalyticsImg1} alt="Data Analytics 2" className="course-image" />
           <img src={dataAnalyticsImg3} alt="Data Analytics 3" className="course-image" />
         </div> */}
-        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
-          <img src={dataAnalyticsImg} alt="Data Analytics 1" className="custom-course-image" />
-          <img src={dataAnalyticsImg1} alt="Data Analytics 2" className="custom-course-image" />
-          <img src={dataAnalyticsImg3} alt="Data Analytics 3" className="custom-course-image" />
-        </div>
-
-
-
-      
+        <img
+          src={Courses1}
+          alt="SAP Course"
+          className="course-banner-image"
+        />
         <div className="course-info-row">
-          <span className="info-pill">4 Weeks</span>
-          <span className="info-pill">Beginner</span>
+          <span className="info-pill">6 Months</span>
+          <span className="info-pill">Beginner-friendly</span>
           <span className="course-author">By Sagar</span>
-           <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
+          <button className="view-course-btn" onClick={handleViewCourse}>View Course</button>
         </div>
 
 
@@ -103,12 +94,12 @@ export default function Courses() {
           <div className="curriculum-grid-wrapper">
             <div className="curriculum-grid">
               {[
-                'Introduction to Data Analytics',
-                'Excel & Google Sheets for Analysis',
-                'SQL for Data Management',
-                'Python for Data Science',
-                'Data Visualization with Power BI',
-                'Data Visualization with Power BI'
+                'Data Analytics Basics & Excel ',
+                'Advanced Excel',
+                'SQL for Data Analysis',
+                'Power BI & Dashboards',
+                'Python for Data Analysis',
+                'Capstone & Career Prep'
               ].map((item, index) => (
                 <div key={index} className="curriculum-box">
                   <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
@@ -133,15 +124,19 @@ export default function Courses() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
+        {/* <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
           <img src={sapImg1} alt="SAP 1" className="course-image" />
           <img src={sapImg2} alt="SAP 2" className="course-image" />
           <img src={sapImg3} alt="SAP 3" className="course-image" />
-        </div>
-
+        </div> */}
+        <img
+          src={Courses2}
+          alt="SAP Course"
+          className="course-banner-image"
+        />
         <div className="course-info-row">
-          <span className="info-pill">8 Weeks</span>
-          <span className="info-pill">Intermediate</span>
+          <span className="info-pill">6 Months</span>
+          <span className="info-pill">Beginner-friendly</span>
           <span className="course-author">By David Brown</span>
           <button className="view-course-btn" onClick={handleViewCourse1}>View Course</button>
         </div>
@@ -151,13 +146,14 @@ export default function Courses() {
           <div className="curriculum-grid-wrapper">
             <div className="curriculum-grid">
               {[
-                'Overview of ERP & SAP',
-                'SAP FICO – Financial Accounting',
-                'SAP MM – Materials Management',
-                'SAP SD – Sales & Distribution',
-                'SAP Integration & Reporting'
+                'AP Basics & Navigation',
+                'SAP FICO',
+                'SAP MM',
+                'SAP SD',
+                'SAP ABAP',
+                'Integration & Career'
               ].map((item, index) => (
-                <div key={index} className="curriculum-box" style={{ width: '215px' }}>
+                <div key={index} className="curriculum-box" >
                   <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
                   <p className="curriculum-text">{item}</p>
                 </div>
@@ -196,18 +192,22 @@ export default function Courses() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
+        {/* <div className="flex flex-col md:flex-row gap-6 mb-4 mx-auto custom-container">
           <img src={sapImg4} alt="cad" className="course-image" />
           <img src={sapImg5} alt="solidworks" className="course-image" />
           <img src={sapImg6} alt="ansys" className="course-image" />
-        </div>
+        </div> */}
+        <img
+          src={Courses3}
+          alt="SAP Course"
+          className="course-banner-image"
+        />
 
-          
         <div className="course-info-row">
-          <span className="info-pill">8 Weeks</span>
-          <span className="info-pill">Intermediate</span>
+          <span className="info-pill">6 Months</span>
+          <span className="info-pill">Beginner-friendly</span>
           <span className="course-author">By David Brown</span>
-           <button className="view-course-btn" onClick={handleViewCourse2}>View Course</button>
+          <button className="view-course-btn" onClick={handleViewCourse2}>View Course</button>
         </div>
 
         {/* <div className="flex justify-between items-center mb-4">
@@ -222,13 +222,14 @@ export default function Courses() {
           <div className="curriculum-grid-wrapper">
             <div className="curriculum-grid">
               {[
-                '2D Drafting with AutoCAD',
-                '3D Modeling in SolidWorks',
-                'Structural Analysis with ANSYS',
-                'Real-world Design Projects',
-                'Design Validation & Final Presentation'
+                'CAD 2D Basics',
+                '3D Modeling',
+                'Product Design',
+                'CAE Fundamentals',
+                'CAM & CNC',
+                'Integration & Career'
               ].map((item, index) => (
-                <div key={index} className="curriculum-box" style={{ width: '215px' }}>
+                <div key={index} className="curriculum-box" >
                   <p className="curriculum-number">{String(index + 1).padStart(2, '0')}</p>
                   <p className="curriculum-text">{item}</p>
                 </div>

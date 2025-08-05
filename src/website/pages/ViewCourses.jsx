@@ -1,6 +1,7 @@
 import React from 'react';
 import courseImage from '../../images/Container.png';
 import '../../website/css/viewcourses.css';
+import courseVideo from '../../images/data-analytics.mp4';
 
 export default function ViewCourses() {
     return (
@@ -24,15 +25,24 @@ export default function ViewCourses() {
 
             {/* === Video Preview Section === */}
             <div className="video-preview mb-5 position-relative">
-                <img
+                <video
+                    className="img-fluid rounded shadow-sm"
+                    controls
+                    poster={courseImage} // Optional thumbnail before play
+                >
+                    <source src={courseVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+
+                {/* <img
                     src={courseImage}
                     alt="Data Analytics Course Preview"
                     className="img-fluid rounded shadow-sm"
-                />
+                /> */}
                 {/* Play Icon Overlay */}
-                <div className="play-icon position-absolute top-50 start-50 translate-middle">
+                {/* <div className="play-icon position-absolute top-50 start-50 translate-middle">
                     <span style={{ fontSize: '3rem', color: '#fff' }}>&#9658;</span>
-                </div>
+                </div> */}
             </div>
 
             {/* === Monthly Breakdown Heading === */}
@@ -48,7 +58,7 @@ export default function ViewCourses() {
                         <ul className="list-unstyled small">
                             <li>Data Analytics Overview – Concepts<span className="text-muted">Core Lesson</span></li>
                             <li>Excel Formulas – Functions & Logic<span className="text-muted">Hands-On</span></li>
-                             <li>Excel Visualization – Charts, Graphs<span className="text-muted">Practice Session</span></li>
+                            <li>Excel Visualization – Charts, Graphs<span className="text-muted">Practice Session</span></li>
                             <li>Mini Project – Sales Data Excel<span className="text-muted">Project</span></li>
                         </ul>
 
@@ -98,7 +108,7 @@ export default function ViewCourses() {
                     </div>
                 </div>
 
-                 <div className="col-md-6 ">
+                <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">05</h5>
                         <p className="fw-bold">Python for Data Analysis</p>
@@ -111,7 +121,7 @@ export default function ViewCourses() {
                     </div>
                 </div>
 
-                 <div className="col-md-6 ">
+                <div className="col-md-6 ">
                     <div className="month-card p-3 shadow-sm rounded border">
                         <h5 className="text-orange fw-bold">06</h5>
                         <p className="fw-bold">Capstone & Career Prep</p>
