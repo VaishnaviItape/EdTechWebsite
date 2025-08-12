@@ -12,9 +12,11 @@ export default function Contact() {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
-    course: '',
+    phoneNumber: '',  // ✅ changed from phone
+    service: '',
     message: '',
+    companyName: 'EdTech',
+    companyCode: 'EdTech'
   });
 
   const [errors, setErrors] = useState({});
@@ -28,10 +30,10 @@ export default function Contact() {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
 
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter 10 digit phone number';
+    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = 'Phone number is required';
+    else if (!/^\d{10}$/.test(formData.phoneNumber)) newErrors.phoneNumber = 'Enter 10 digit phone number';
 
-    if (!formData.course) newErrors.course = 'Please select a course';
+    if (!formData.service) newErrors.service = 'Please select a course';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
 
     return newErrors;
@@ -66,10 +68,13 @@ export default function Contact() {
           firstName: '',
           lastName: '',
           email: '',
-          phone: '',
-          course: '',
+          phoneNumber: '',  // ✅                                                                                                                                     , // changed                            
+          service: '',      // ✅
           message: '',
+          companyName: 'EdTech',
+          companyCode: 'EdTech'
         });
+
       } else {
         setSubmitStatus('Failed to send. Please try again later.');
       }
@@ -144,34 +149,36 @@ export default function Contact() {
                 </div>
 
                 {/* Phone */}
+                {/* Phone */}
                 <div className="col-md-6">
                   <label className="form-label small">Phone</label>
                   <input
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
+                    name="phoneNumber"   // ✅ changed
+                    value={formData.phoneNumber}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter Phone Number"
                   />
-                  {errors.phone && <small className="text-danger">{errors.phone}</small>}
+                  {errors.phoneNumber && <small className="text-danger">{errors.phoneNumber}</small>}
                 </div>
+
 
                 {/* Course */}
                 <div className="col-12">
                   <label className="form-label small">Course</label>
                   <select
-                    name="course"
-                    value={formData.course}
+                    name="service"    // ✅ changed
+                    value={formData.service}
                     onChange={handleChange}
                     className="form-select"
                   >
-                    <option value="">Choose your course</option>
+                    <option value="">Choose your service</option>
                     <option value="Data Analytics">Data Analytics</option>
                     <option value="Web Development">Web Development</option>
                     <option value="UI/UX Design">UI/UX Design</option>
                   </select>
-                  {errors.course && <small className="text-danger">{errors.course}</small>}
+                  {errors.service && <small className="text-danger">{errors.service}</small>}
                 </div>
 
                 {/* Message */}

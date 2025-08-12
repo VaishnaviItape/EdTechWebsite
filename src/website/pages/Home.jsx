@@ -16,20 +16,87 @@ import student3 from '../../images/student (3).png';
 import student4 from '../../images/student (4).png';
 import student5 from '../../images/student (5).png';
 import { useNavigate } from 'react-router-dom';
-
+import linkedinLogo from '../../images/linkedin-logo.png';
 import '../css/Home.css';
 export default function Home() {
+  const [formDatap, setFormDatap] = useState({
+    firstNamep: '',
+    lastNamep: '',
+    emailp: '',
+    phoneNumberp: '',
+    servicep: '',
+    message: 'Popup Info',
+    companyName: 'EdTech',
+    companyCode: 'EdTech'
+  });
+
+  const handleChangep = (e) => {
+    setFormDatap({ ...formDatap, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmitp = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      firstName: formDatap.firstNamep,
+      lastName: formDatap.lastNamep,
+      email: formDatap.emailp,
+      phoneNumber: formDatap.phoneNumberp,
+      service: formDatap.servicep,
+      message: formDatap.message,
+      companyName: formDatap.companyName,
+      companyCode: formDatap.companyCode
+    };
+
+    try {
+      const response = await fetch('http://amkore7-001-site1.ltempurl.com/api/ContactUs/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        // 1. Show success alert
+        alert('✅ Message sent successfully!');
+
+        // 2. Close popup
+        setShowFormPopup(false);
+
+
+        // Reset form
+        setFormDatap({
+          firstNamep: '',
+          lastNamep: '',
+          emailp: '',
+          phoneNumberp: '',
+          servicep: '',
+          message: 'Popup Info',
+          companyName: 'EdTech',
+          companyCode: 'EdTech'
+        });
+      } else {
+        alert('❌ Failed to send. Please try again later.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('⚠️ Something went wrong. Please try again.');
+    }
+  };
 
 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
-    course: '',
+    phoneNumber: '',  // ✅ changed from phone
+    service: '',
     message: '',
+    companyName: 'EdTech',
+    companyCode: 'EdTech'
   });
-
+  const baseURL = "http://amkore7-001-site1.ltempurl.com";
   const [errors, setErrors] = useState({});
   const [submitStatus, setSubmitStatus] = useState('');
 
@@ -41,10 +108,10 @@ export default function Home() {
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Invalid email';
 
-    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-    else if (!/^\d{10}$/.test(formData.phone)) newErrors.phone = 'Enter 10 digit phone number';
+    if (!formData.phoneNumber.trim()) newErrors.phoneNumber = 'Phone number is required';
+    else if (!/^\d{10}$/.test(formData.phoneNumber)) newErrors.phoneNumber = 'Enter 10 digit phone number';
 
-    if (!formData.course) newErrors.course = 'Please select a course';
+    if (!formData.service) newErrors.service = 'Please select a course';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
 
     return newErrors;
@@ -55,7 +122,9 @@ export default function Home() {
     setErrors({ ...errors, [e.target.name]: '' });
   };
 
+
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     const validationErrors = validate();
 
@@ -79,10 +148,13 @@ export default function Home() {
           firstName: '',
           lastName: '',
           email: '',
-          phone: '',
-          course: '',
+          phoneNumber: '',  // ✅                                                                                                                                     , // changed                            
+          service: '',      // ✅
           message: '',
+          companyName: 'EdTech',
+          companyCode: 'EdTech'
         });
+
       } else {
         setSubmitStatus('Failed to send. Please try again later.');
       }
@@ -172,6 +244,34 @@ export default function Home() {
       navigate('/view-coursescda');
     }
   };
+  const [mentors, setMentors] = useState([]);
+  const [loadingMentors, setLoadingMentors] = useState(true);
+  const [errorMentors, setErrorMentors] = useState(null);
+  const token = sessionStorage.getItem("authToken");
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("authToken");  // moved here
+
+    fetch("http://amkore7-001-site1.ltempurl.com/api/Mentor", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to fetch mentors");
+        return res.json();
+      })
+      .then(data => {
+        setMentors(data);
+        setLoadingMentors(false);
+      })
+      .catch(err => {
+        setErrorMentors(err.message);
+        setLoadingMentors(false);
+      });
+  }, []);  // no dependency warning now
+
+
   return (
     <div className="container py-5">
       <div className="text-center py-5 position-relative overflow-hidden hero-section">
@@ -314,28 +414,75 @@ export default function Home() {
       {showFormPopup && (
         <div className="overlay-form">
           <div className="form-popup">
-            <button className="close-btn" onClick={() => setShowFormPopup(false)}>&times;</button>
+            <button
+              className="close-btn"
+              onClick={() => setShowFormPopup(false)}
+            >
+              &times;
+            </button>
             <h4 className="form-title">✅ Ready to Learn Something New?</h4>
             <p className="form-subtitle">Get updates, tips & resources!</p>
 
-            <div className="form-grid">
-              <input type="text" placeholder="Enter Your Full Name" />
-              <input type="text" placeholder="Enter Your Phone No." />
-              <input type="email" placeholder="Enter Your Email" />
-              <select>
-                <option>Choose your course</option>
-                <option>Data Analytics</option>
-                <option>SAP</option>
-                <option>CAD/CAE</option>
-              </select>
-            </div>
+            {/* ✅ Using same formData */}
+            <form onSubmit={handleSubmitp}>
+              <div className="form-grid">
+                <input
+                  type="text"
+                  name="firstNamep"
+                  placeholder="Enter Your First Name"
+                  value={formDatap.firstName}
+                  onChange={handleChangep}
+                />
+                <input
+                  type="text"
+                  name="lastNamep"
+                  placeholder="Enter Your Last Name"
+                  value={formDatap.lastName}
+                  onChange={handleChangep}
+                />
+                <input
+                  type="tel"
+                  name="phoneNumberp"
+                  placeholder="Enter Your Phone No."
+                  value={formDatap.phoneNumber}
+                  onChange={handleChangep}
+                />
+                <input
+                  type="email"
+                  name="emailp"
+                  placeholder="Enter Your Email"
+                  value={formDatap.email}
+                  onChange={handleChangep}
+                />
+                <select
+                  name="servicep"
+                  value={formDatap.service}
+                  onChange={handleChangep}
+                >
+                  <option value="">Choose your course</option>
+                  <option value="Data Analytics">Data Analytics</option>
+                  <option value="SAP">SAP</option>
+                  <option value="CAD/CAE">CAD/CAE</option>
+                </select>
+              </div>
 
-            <div className="form-actions">
-              <button className="btn btn-secondary">Cancel</button>
-              <button className="btn btn-warning">Confirm</button>
-            </div>
+              <div className="form-actions">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={() => setShowFormPopup(false)}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-warning">
+                  Confirm
+                </button>
+              </div>
+            </form>
           </div>
-        </div>)}
+        </div>
+      )}
+
 
 
       <div className="courses-section">
@@ -418,44 +565,60 @@ export default function Home() {
       <section className="mentors-section">
         <h2 className="mentors-title">Meet Your Mentors</h2>
 
-        <div className="mentors-grid">
-          {[
-            {
-              name: "Priya Mehta",
-              title: "Senior Data Analyst",
-              desc: "With 8+ years in analytics, Priya brings real-world business intelligence into every session.",
-            },
-            {
-              name: "Rajesh Kumar",
-              title: "SAP FICO Consultant",
-              desc: "Rajesh simplifies complex SAP modules with practical insights from real enterprise projects.",
-            },
-            {
-              name: "Sneha Patil",
-              title: "Design Engineer",
-              desc: "From 3D modeling to simulation, Sneha teaches tools engineers actually use in the industry.",
-            },
-          ].map((mentor, index) => (
-            <div key={index} className="mentor-card">
-              <img src={Avatar} alt={mentor.name} className="mentor-avatar" />
-              <div>
-                <h4>{mentor.name}</h4>
-                <p className="mentor-title">{mentor.title}</p>
-                <p className="mentor-desc">{mentor.desc}</p>
-              </div>
+        {loadingMentors && <p>Loading mentors...</p>}
+        {errorMentors && <p>Error: {errorMentors}</p>}
 
-              {/* Hover content (initially hidden) */}
-              <div className="hover-overlay">
-                {/* <p>With 8+ years in analytics, Priya brings real-world business intelligence into every session.</p> */}
-                <a href="/" className="linkedin-link">
-                  <img src="/linkedin-icon.png" alt="LinkedIn" className="linkedin-icon" />
-                  Connect on LinkedIn
-                </a>
-              </div>
-            </div>
+        {!loadingMentors && !errorMentors && (
+          <div className="mentors-grid">
+            {mentors.map((mentor, index) => (
+              <div key={index} className="mentor-card">
+                <img
+                  src={
+                    mentor.photoUrl
+                      ? (mentor.photoUrl.startsWith('http')
+                        ? mentor.photoUrl
+                        : baseURL + mentor.photoUrl)
+                      : Avatar
+                  }
+                  alt={mentor.name}
+                  className="mentor-avatar"
+                  onError={(e) => {
+                    e.target.onerror = null; // Prevent infinite loop if Avatar also fails
+                    e.target.src = Avatar;
+                  }}
+                />
 
-          ))}
-        </div>
+                <div>
+                  <h4>{mentor.name}</h4>
+                  <p className="mentor-title">{mentor.title}</p>
+                  <p className="mentor-desc">{mentor.description}</p>
+                </div>
+
+                <div className="hover-overlay">
+                  <a
+                    href={
+                      mentor.linkedInId
+                        ? (mentor.linkedInId.startsWith('http') ? mentor.linkedInId : `https://${mentor.linkedInId}`)
+                        : "/"
+                    }
+                    className="linkedin-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={linkedinLogo} // also make sure the image src is correct, with extension
+                      alt="LinkedIn"
+                      className="linkedin-icon"
+                    />
+                    Connect on LinkedIn
+                  </a>
+                </div>
+
+
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       <div className="scroll-wrapper overflow-hidden">
@@ -679,34 +842,36 @@ export default function Home() {
                 </div>
 
                 {/* Phone */}
+                {/* Phone */}
                 <div className="col-md-6">
                   <label className="form-label small">Phone</label>
                   <input
                     type="tel"
-                    name="phone"
-                    value={formData.phone}
+                    name="phoneNumber"   // ✅ changed
+                    value={formData.phoneNumber}
                     onChange={handleChange}
                     className="form-control"
                     placeholder="Enter Phone Number"
                   />
-                  {errors.phone && <small className="text-danger">{errors.phone}</small>}
+                  {errors.phoneNumber && <small className="text-danger">{errors.phoneNumber}</small>}
                 </div>
+
 
                 {/* Course */}
                 <div className="col-12">
                   <label className="form-label small">Course</label>
                   <select
-                    name="course"
-                    value={formData.course}
+                    name="service"    // ✅ changed
+                    value={formData.service}
                     onChange={handleChange}
                     className="form-select"
                   >
-                    <option value="">Choose your course</option>
+                    <option value="">Choose your service</option>
                     <option value="Data Analytics">Data Analytics</option>
                     <option value="Web Development">Web Development</option>
                     <option value="UI/UX Design">UI/UX Design</option>
                   </select>
-                  {errors.course && <small className="text-danger">{errors.course}</small>}
+                  {errors.service && <small className="text-danger">{errors.service}</small>}
                 </div>
 
                 {/* Message */}
@@ -793,4 +958,5 @@ export default function Home() {
 
 
   );
+
 }

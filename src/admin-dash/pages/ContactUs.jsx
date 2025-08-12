@@ -4,11 +4,23 @@ const ContactUs = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    // Replace with actual API
-    fetch('/api/contact-submissions')
-      .then(res => res.json())
-      .then(json => setData(json))
-      .catch(err => console.error('Error fetching data:', err));
+    const token = sessionStorage.getItem("authToken"); // get token from storage
+
+    fetch("http://amkore7-001-site1.ltempurl.com/api/ContactUs/company/EdTech", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // pass token here
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        return res.json();
+      })
+      .then((json) => setData(json))
+      .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
   return (
@@ -35,8 +47,8 @@ const ContactUs = () => {
                   <td>{entry.firstName}</td>
                   <td>{entry.lastName}</td>
                   <td>{entry.email}</td>
-                  <td>{entry.phone}</td>
-                  <td>{entry.course}</td>
+                  <td>{entry.phoneNumber}</td>
+                  <td>{entry.service}</td>
                   <td>{entry.message}</td>
                 </tr>
               ))

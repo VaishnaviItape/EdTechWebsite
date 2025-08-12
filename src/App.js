@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './auth/Login';
 import Dashboard from './admin-dash/pages/Dashboard';
 import ContactUs from './admin-dash/pages/ContactUs';
+import Mentor from './admin-dash/pages/Mentor';
 import PrivateRoute from './auth/PrivateRoute';
 import Home from './website/pages/Home'
 import './App.css';
@@ -43,6 +44,7 @@ function App() {
           element={<PrivateRoute><DashboardLayout><Dashboard /></DashboardLayout></PrivateRoute>}
         />
        <Route path="/contactus" element={<PrivateRoute><DashboardLayout><ContactUs /></DashboardLayout></PrivateRoute>} />
+        <Route path="/mentor" element={<PrivateRoute><DashboardLayout><Mentor /></DashboardLayout></PrivateRoute>} />
       </Routes>
     </Router>
   );
