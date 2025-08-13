@@ -623,7 +623,6 @@ export default function Home() {
           </div>
         )}
       </section>
-
       <div className="scroll-wrapper overflow-hidden">
         <section className="bg-gray-50 py-12 px-4">
           <div className="max-w-6xl mx-auto">
@@ -633,16 +632,16 @@ export default function Home() {
               <div>
                 <h2 className="fw-semibold">Our Testimonials</h2>
                 <p className="testimonial-text">
-                  Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.
+                  Hear from our learners across different career paths.
                 </p>
               </div>
               {/* <button className="btn btn-outline-secondary btn-sm mt-3 mt-md-0">View All</button> */}
             </div>
 
             {/* Scrollable Testimonials */}
-            <div className="scroll-track d-flex  flex-nowrap gap-4 pb-3">
+            <div className="scroll-track d-flex flex-nowrap gap-4 pb-3">
 
-              {/* Card 1 */}
+              {/* Data Analytics */}
               <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
                 <div className="card-body d-flex flex-column justify-content-between h-100">
                   <div>
@@ -651,7 +650,8 @@ export default function Home() {
                       <div className="text-warning small">★★★★★</div>
                     </div>
                     <p className="card-text small">
-                      The Data Analytics course provided a perfect blend of theory and hands-on practice...
+                      The Data Analytics course gave me practical exposure to Excel, SQL, and Python.
+                      I was able to apply these skills directly in my role, and it boosted my confidence a lot.
                     </p>
                   </div>
                   <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
@@ -659,14 +659,14 @@ export default function Home() {
                       <img src={Avatar} alt="Dipak" className="rounded-circle me-2" width="40" height="40" />
                       <div>
                         <div className="fw-semibold small">Dipak</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
+                        <div className="text-muted small">Data Analyst @ TCS</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2 */}
+              {/* CAD/CAE */}
               <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
                 <div className="card-body d-flex flex-column justify-content-between h-100">
                   <div>
@@ -675,7 +675,8 @@ export default function Home() {
                       <div className="text-warning small">★★★★★</div>
                     </div>
                     <p className="card-text small">
-                      I had no prior experience in analytics, but this course made it approachable...
+                      The CAD/CAE training helped me master design tools like AutoCAD, CATIA, and ANSYS.
+                      The hands-on projects made it easy to understand complex concepts of simulation and design.
                     </p>
                   </div>
                   <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
@@ -683,15 +684,15 @@ export default function Home() {
                       <img src={Avatar} alt="Sakshi" className="rounded-circle me-2" width="40" height="40" />
                       <div>
                         <div className="fw-semibold small">Sakshi</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
+                        <div className="text-muted small">Design Engineer @ Mahindra</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3 */}
-              <div className="card shadow-sm custom-card" >
+              {/* SAP */}
+              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
                 <div className="card-body d-flex flex-column justify-content-between h-100">
                   <div>
                     <div className="d-flex justify-content-between align-items-center mb-2">
@@ -699,7 +700,8 @@ export default function Home() {
                       <div className="text-warning small">★★★★★</div>
                     </div>
                     <p className="card-text small">
-                      The modules on Excel, SQL, and Python were incredibly helpful...
+                      The SAP course was a game changer for me. From basic navigation to advanced ERP modules,
+                      everything was explained with real-world case studies that made learning engaging.
                     </p>
                   </div>
                   <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
@@ -707,86 +709,13 @@ export default function Home() {
                       <img src={Avatar} alt="Ovi" className="rounded-circle me-2" width="40" height="40" />
                       <div>
                         <div className="fw-semibold small">Ovi</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
+                        <div className="text-muted small">SAP Consultant @ Infosys</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Repeated Cards for Scrolling */}
-
-              {/* Repeat Card 1 */}
-              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
-                <div className="card-body d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div className="d-flex justify-content-between align-items-center mb-2">
-                      <div className="text-warning fs-3">❝</div>
-                      <div className="text-warning small">★★★★★</div>
-                    </div>
-                    <p className="card-text small">
-                      The Data Analytics course provided a perfect blend of theory and hands-on practice...
-                    </p>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div className="d-flex align-items-center">
-                      <img src={Avatar} alt="Dipak" className="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div className="fw-semibold small">Dipak</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Repeat Card 2 */}
-              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
-                <div className="card-body d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div className="d-flex justify-content-between align-items-center mb-2">
-                      <div className="text-warning fs-3">❝</div>
-                      <div className="text-warning small">★★★★★</div>
-                    </div>
-                    <p className="card-text small">
-                      I had no prior experience in analytics, but this course made it approachable...
-                    </p>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div className="d-flex align-items-center">
-                      <img src={Avatar} alt="Sakshi" className="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div className="fw-semibold small">Sakshi</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Repeat Card 3 */}
-              <div className="card shadow-sm custom-card" style={{ minWidth: '300px', flex: '0 0 auto' }}>
-                <div className="card-body d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <div className="d-flex justify-content-between align-items-center mb-2">
-                      <div className="text-warning fs-3">❝</div>
-                      <div className="text-warning small">★★★★★</div>
-                    </div>
-                    <p className="card-text small">
-                      The modules on Excel, SQL, and Python were incredibly helpful...
-                    </p>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
-                    <div className="d-flex align-items-center">
-                      <img src={Avatar} alt="Ovi" className="rounded-circle me-2" width="40" height="40" />
-                      <div>
-                        <div className="fw-semibold small">Ovi</div>
-                        <div className="text-muted small">Data Analytic @ TCS</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -869,7 +798,7 @@ export default function Home() {
                     onChange={handleChange}
                     className="form-select"
                   >
-                    <option value="">Choose your service</option>
+                    <option value="">Choose your Course</option>
                     <option value="Data Analytics">Data Analytics</option>
                     <option value="Web Development">Web Development</option>
                     <option value="UI/UX Design">UI/UX Design</option>

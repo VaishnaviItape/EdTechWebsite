@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
-import '../../website/css/Footer.css'; 
+import '../../website/css/Footer.css';
 export default function Footer() {
   return (
     <footer className="bg-white text-dark pt-5 border-top">
@@ -9,16 +9,16 @@ export default function Footer() {
 
           {/* 🔶 Logo & Contact */}
           <div className="col-md-3">
-          <h5 className="edtech-heading">Skill Paradise</h5>
+            <h5 className="edtech-heading">Skill Paradise</h5>
             <ul className="list-unstyled small mt-3">
               <li className="mb-2"><FaEnvelope className="me-2 text-secondary" />skillparadise1@gmail.com</li>
-              <li className="mb-2"><FaPhoneAlt className="me-2 text-secondary" /> +91 91813 23 2309</li>
+              <li className="mb-2"><FaPhoneAlt className="me-2 text-secondary" /> +91 9527270682</li>
               <li><FaMapMarkerAlt className="me-2 text-secondary" /> Wagholi, Pune</li>
-            </ul>       
+            </ul>
           </div>
 
           {/* 🏠 Home Links */}
-          <div className="col-md-3">            
+          <div className="col-md-3">
             <h6 className="fw-bold">Home</h6>
             <ul className="list-unstyled small mt-2">
               <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Benefits</a></li>
@@ -57,8 +57,18 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center py-3 mt-4 border-top small text-muted">
-          © {new Date().getFullYear()} Skill Paradise. All rights reserved.
+          © {new Date().getFullYear()} Skill Paradise. All rights reserved. |
+          Powered by{" "}
+          <a
+            href="http://tmkcomputers.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-decoration-none"
+          >
+            TMK Computers
+          </a>
         </div>
+
       </div>
     </footer>
   );

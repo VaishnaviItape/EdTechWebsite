@@ -97,7 +97,7 @@ export default function Contact() {
         </div>
         <div className="header-right">
           <p className="course-description">
-            Welcome to SkillBridge's Pricing Plan page...
+            Welcome to Skill Paradise's Pricing Plan page...
           </p>
         </div>
       </div>
@@ -177,7 +177,7 @@ export default function Contact() {
                     onChange={handleChange}
                     className="form-select"
                   >
-                    <option value="">Choose your service</option>
+                    <option value="">Choose your Course</option>
                     <option value="Data Analytics">Data Analytics</option>
                     <option value="Web Development">Web Development</option>
                     <option value="UI/UX Design">UI/UX Design</option>
