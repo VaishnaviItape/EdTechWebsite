@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-md-3">
           <h5 className="edtech-heading">Skill Paradise</h5>
             <ul className="list-unstyled small mt-3">
-              <li className="mb-2"><FaEnvelope className="me-2 text-secondary" /> edtech@gmail.com</li>
+              <li className="mb-2"><FaEnvelope className="me-2 text-secondary" />skillparadise1@gmail.com</li>
               <li className="mb-2"><FaPhoneAlt className="me-2 text-secondary" /> +91 91813 23 2309</li>
               <li><FaMapMarkerAlt className="me-2 text-secondary" /> Wagholi, Pune</li>
             </ul>       
