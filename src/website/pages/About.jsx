@@ -60,11 +60,11 @@ export default function About() {
       <section className="about-section">
         <div className="about-container">
           {/* Left title */}
-          <h2 className="about-title">About EdTech</h2>
+          <h2 className="about-title">About Skill Paradise</h2>
 
           {/* Right description */}
           <p className="about-text">
-            Welcome to EdTech, your trusted partner in mastering industry-driven
+            Welcome to Skill Paradise, your trusted partner in mastering industry-driven
             skills. We specialize in offering high-quality online courses in SAP,
             Data Analytics, and CAD/CAE — empowering learners to build strong
             careers in today’s competitive digital and engineering landscape.
@@ -101,7 +101,7 @@ export default function About() {
         <div className="achievements-header">
           <h2>Our Goals</h2>
           <p>
-            At EdTech, our mission is to empower learners from all walks of life to succeed in today’s digital and industrial world.
+            At Skill Paradise, our mission is to empower learners from all walks of life to succeed in today’s digital and industrial world.
           </p>
         </div>
         <div className="achievements-grid">
@@ -132,7 +132,7 @@ export default function About() {
         <div className="goals-header">
           <h2>Our Goals</h2>
           <p>
-            At EdTech, our mission is to empower learners from all walks of life to succeed in today’s digital and industrial world.
+            At Skill Paradise, our mission is to empower learners from all walks of life to succeed in today’s digital and industrial world.
           </p>
         </div>
 
@@ -154,7 +154,7 @@ export default function About() {
               <span className="highlight">Together</span>, Let’s Shape the Future of<br></br> Innovation
             </h2>
             <p>
-              Whether you're aspiring to become a data analyst, SAP consultant, or design engineer — EdTech is here to guide your journey.
+              Whether you're aspiring to become a data analyst, SAP consultant, or design engineer — Skill Paradise is here to guide your journey.
             </p>
             <img src={abstract} alt="Innovation Visual" className="cta-image" />
           </div>

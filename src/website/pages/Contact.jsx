@@ -63,26 +63,30 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setSubmitStatus('Message sent successfully!');
+        // ✅ Show success alert
+        alert('✅ Message sent successfully!');
+
+        // Reset form
         setFormData({
           firstName: '',
           lastName: '',
           email: '',
-          phoneNumber: '',  // ✅                                                                                                                                     , // changed                            
-          service: '',      // ✅
+          phoneNumber: '',
+          service: '',
           message: '',
           companyName: 'EdTech',
           companyCode: 'EdTech'
         });
 
       } else {
-        setSubmitStatus('Failed to send. Please try again later.');
+        alert('❌ Failed to send. Please try again later.');
       }
     } catch (err) {
       console.error(err);
-      setSubmitStatus('Something went wrong. Please try again.');
+      alert('⚠️ Something went wrong. Please try again.');
     }
   };
+
 
   return (
     <div className="container py-5">

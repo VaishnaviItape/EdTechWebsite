@@ -11,9 +11,11 @@ const Mentor = () => {
     });
     const [editingId, setEditingId] = useState(null);
 
+    const [page, setPage] = useState(1);
+    const [pageSize, setPageSize] = useState(10);
+    const [errorMessage, setErrorMessage] = useState("");
     const token = sessionStorage.getItem("authToken");
 
-    // Fetch mentor data
     const fetchMentors = () => {
         fetch("http://amkore7-001-site1.ltempurl.com/api/Mentor", {
             headers: { Authorization: `Bearer ${token}` },
@@ -27,7 +29,6 @@ const Mentor = () => {
         fetchMentors();
     }, []);
 
-    // Handle form change
     const handleChange = (e) => {
         const { name, value, files } = e.target;
         if (files) {
@@ -37,9 +38,40 @@ const Mentor = () => {
         }
     };
 
-    // Handle add/update mentor
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+
+    //     const method = editingId ? "PUT" : "POST";
+    //     const url = editingId
+    //         ? `http://amkore7-001-site1.ltempurl.com/api/Mentor/${editingId}`
+    //         : "http://amkore7-001-site1.ltempurl.com/api/Mentor";
+
+    //     const formPayload = new FormData();
+    //     formPayload.append("name", formData.name || "");
+    //     formPayload.append("description", formData.description || "");
+    //     formPayload.append("linkedInId", formData.linkedInId || "");
+    //     if (formData.photo) formPayload.append("photo", formData.photo);
+
+    //     fetch(url, {
+    //         method,
+    //         headers: { Authorization: `Bearer ${token}` },
+    //         body: formPayload,
+    //     })
+    //         .then((res) => {
+    //             if (!res.ok) throw new Error("Failed to save mentor");
+    //             return res.json();
+    //         })
+    //         .then(() => {
+    //             fetchMentors();
+    //             setShowDrawer(false);
+    //             setFormData({ name: "", description: "", linkedInId: "", photo: null });
+    //             setEditingId(null);
+    //         })
+    //         .catch((err) => console.error(err));
+    // };
     const handleSubmit = (e) => {
         e.preventDefault();
+        setErrorMessage(""); // clear old errors
 
         const method = editingId ? "PUT" : "POST";
         const url = editingId
@@ -58,7 +90,11 @@ const Mentor = () => {
             body: formPayload,
         })
             .then((res) => {
-                if (!res.ok) throw new Error("Failed to save mentor");
+                if (!res.ok) {
+                    return res.text().then((text) => {
+                        throw new Error(text || "Failed to save mentor");
+                    });
+                }
                 return res.json();
             })
             .then(() => {
@@ -67,10 +103,12 @@ const Mentor = () => {
                 setFormData({ name: "", description: "", linkedInId: "", photo: null });
                 setEditingId(null);
             })
-            .catch((err) => console.error(err));
+            .catch((err) => {
+                console.error(err);
+                setErrorMessage(err.message || "Something went wrong. Please try again.");
+            });
     };
 
-    // Handle delete
     const handleDelete = (id) => {
         if (!window.confirm("Are you sure you want to delete this mentor?")) return;
 
@@ -85,8 +123,8 @@ const Mentor = () => {
             .catch((err) => console.error(err));
     };
 
-    // Handle edit
     const handleEdit = (mentor) => {
+        setErrorMessage(""); // clear old errors
         setFormData({
             name: mentor.name || "",
             description: mentor.description || "",
@@ -97,6 +135,12 @@ const Mentor = () => {
         setShowDrawer(true);
     };
 
+
+    // Pagination logic
+    const totalRecords = mentors.length;
+    const totalPages = Math.ceil(totalRecords / pageSize);
+    const paginatedMentors = mentors.slice((page - 1) * pageSize, page * pageSize);
+
     return (
         <div className="container mt-4">
             <div className="d-flex justify-content-between align-items-center mb-3">
@@ -106,8 +150,10 @@ const Mentor = () => {
                     onClick={() => {
                         setShowDrawer(true);
                         setEditingId(null);
+                        setErrorMessage(""); // clear old errors
                         setFormData({ name: "", description: "", linkedInId: "", photo: null });
                     }}
+
                 >
                     + Add Mentor
                 </button>
@@ -127,10 +173,10 @@ const Mentor = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {mentors.length > 0 ? (
-                            mentors.map((mentor, index) => (
+                        {paginatedMentors.length > 0 ? (
+                            paginatedMentors.map((mentor, index) => (
                                 <tr key={mentor.id}>
-                                    <td>{index + 1}</td>
+                                    <td>{(page - 1) * pageSize + index + 1}</td>
                                     <td>{mentor.name}</td>
                                     <td>{mentor.description}</td>
                                     <td>
@@ -181,6 +227,52 @@ const Mentor = () => {
                 </table>
             </div>
 
+            {/* Pagination + Info */}
+            <div className="d-flex flex-wrap justify-content-between align-items-center mt-3">
+                {/* Pagination buttons */}
+                <nav>
+                    <ul className="pagination mb-0">
+                        <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
+                            <button className="page-link" onClick={() => setPage(page - 1)}>Prev</button>
+                        </li>
+                        {Array.from({ length: totalPages }, (_, i) => (
+                            <li key={i} className={`page-item ${page === i + 1 ? "active" : ""}`}>
+                                <button className="page-link" onClick={() => setPage(i + 1)}>
+                                    {i + 1}
+                                </button>
+                            </li>
+                        ))}
+                        <li className={`page-item ${page === totalPages ? "disabled" : ""}`}>
+                            <button className="page-link" onClick={() => setPage(page + 1)}>Next</button>
+                        </li>
+                    </ul>
+                </nav>
+
+                {/* Records Info + Page Size */}
+                <div className="d-flex align-items-center gap-3">
+                    <div className="text-muted small">
+                        Showing <strong>{(page - 1) * pageSize + 1}</strong> -
+                        <strong>{Math.min(page * pageSize, totalRecords)}</strong> of
+                        <strong>{totalRecords}</strong> records
+                    </div>
+                    <select
+                        className="form-select"
+                        style={{ width: "auto" }}
+                        value={pageSize}
+                        onChange={(e) => {
+                            setPageSize(Number(e.target.value));
+                            setPage(1);
+                        }}
+                    >
+                        <option value={10}>10 items per page</option>
+                        <option value={25}>25 items per page</option>
+                        <option value={50}>50 items per page</option>
+                        <option value={100}>100 items per page</option>
+                        <option value={500}>500 items per page</option>
+                    </select>
+                </div>
+            </div>
+
             {/* Drawer (Bootstrap Offcanvas) */}
             <div
                 className={`offcanvas offcanvas-end ${showDrawer ? "show" : ""}`}
@@ -193,11 +285,14 @@ const Mentor = () => {
                     </h5>
                     <button
                         type="button"
-                        className="btn-close"
+                        className="btn-close"                   
                         onClick={() => setShowDrawer(false)}
                     ></button>
                 </div>
                 <div className="offcanvas-body">
+                     {errorMessage && (
+                        <div className="alert alert-danger py-2 mb-3">{errorMessage}</div>
+                    )}
                     <form onSubmit={handleSubmit}>
                         <div className="mb-3">
                             <label className="form-label">Name *</label>
@@ -260,6 +355,7 @@ const Mentor = () => {
                             </button>
                         </div>
                     </form>
+                   
                 </div>
             </div>
         </div>

@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be15caf4.css",
+    "main.js": "/static/js/main.1416d28a.js",
+    "static/js/453.7d255a9f.chunk.js": "/static/js/453.7d255a9f.chunk.js",
+    "static/media/CAD.mp4": "/static/media/CAD.7c9adb4ee62e259ddf6b.mp4",
+    "static/media/Sap-erp.mp4": "/static/media/Sap-erp.fb9f4e9ae8686ac400ff.mp4",
+    "static/media/data-analytics.mp4": "/static/media/data-analytics.b271b69a4576824a436c.mp4",
+    "static/media/Hero Image.png": "/static/media/Hero Image.543dbb9dc458b500cbcb.png",
+    "static/media/Courses3.png": "/static/media/Courses3.dc34874d88e245a81581.png",
+    "static/media/Courses2.png": "/static/media/Courses2.8c419843ab2f0522dada.png",
+    "static/media/Courses1.png": "/static/media/Courses1.19d5819e1685ef87010e.png",
+    "static/media/Container (1).png": "/static/media/Container (1).b822b4ab1e46587affe9.png",
+    "static/media/Container (2).png": "/static/media/Container (2).1ef237ca31a6c35e86d8.png",
+    "static/media/Container.png": "/static/media/Container.42acdeb72f55a5c65e16.png",
+    "static/media/MAP SECTION.png": "/static/media/MAP SECTION.432c2d8f22c346b08cfe.png",
+    "static/media/image 9.png": "/static/media/image 9.9fb8e62dbec444916eb3.png",
+    "static/media/industry-work.png": "/static/media/industry-work.6d13276f290f45be4b15.png",
+    "static/media/image 8.png": "/static/media/image 8.5927556050d97786f7e2.png",
+    "static/media/iPhone Space Deep Purple Front 1.png": "/static/media/iPhone Space Deep Purple Front 1.40a512305068c1aabfbc.png",
+    "static/media/Vector_Animation.png": "/static/media/Vector_Animation.bc25e08529e9789bac17.png",
+    "static/media/student (5).png": "/static/media/student (5).558cf8ae9b30af68f5fc.png",
+    "static/media/student (4).png": "/static/media/student (4).f7bf6875d5fb664d2936.png",
+    "static/media/student (2).png": "/static/media/student (2).26913869b71b6b48e458.png",
+    "static/media/student (3).png": "/static/media/student (3).ac2c001a06f061034384.png",
+    "static/media/student (1).png": "/static/media/student (1).177603e8fc8e94519366.png",
+    "static/media/Component 6 1.png": "/static/media/Component 6 1.c8fd3897c592c6451a55.png",
+    "index.html": "/index.html",
+    "main.be15caf4.css.map": "/static/css/main.be15caf4.css.map",
+    "main.1416d28a.js.map": "/static/js/main.1416d28a.js.map",
+    "453.7d255a9f.chunk.js.map": "/static/js/453.7d255a9f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be15caf4.css",
+    "static/js/main.1416d28a.js"
+  ]
+}

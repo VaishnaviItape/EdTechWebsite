@@ -36,10 +36,10 @@ export default function Courses() {
         </div>
         <div className="header-right">
           <p className="course-description">
-            Welcome to EdTech’s course catalog. Our 6-month, beginner-friendly programs in Data Analytics, SAP, and CAD/CAE are designed to give you practical skills and career-focused training. Learn from industry experts, work on real projects, and build your future—one course at a time.
+            Welcome to Skill Paradise’s course catalog. Our 6-month, beginner-friendly programs in Data Analytics, SAP, and CAD/CAE are designed to give you practical skills and career-focused training. Learn from industry experts, work on real projects, and build your future—one course at a time.
           </p>
         </div>
-      </div>
+      </div>                                                                
       <hr className="mb-6" />
 
 

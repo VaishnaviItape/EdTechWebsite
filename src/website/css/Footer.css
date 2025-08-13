@@ -1,19 +1,21 @@
 .edtech-heading {
-  width: 91px;
+  width: 168px;
   height: 36px;
   opacity: 1;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-weight: 800;
-  font-style: normal;
+  font-style: normal; /* 'ExtraBold' should be handled via font-weight */
   font-size: 24px;
   line-height: 150%;
-  letter-spacing: 0;
+  letter-spacing: 0%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FF7F22; /* Optional for better visibility on orange */
-  border-radius: 4px; /* Optional for visual smoothness */
+  color: #FF7F22; /* Keeps the orange text */
+  border-radius: 4px;
+  transform: rotate(0deg); /* replaces 'angle: 0 deg;' */
 }
+
 .text-orange {
   color: #FF7F22 !important;
 }

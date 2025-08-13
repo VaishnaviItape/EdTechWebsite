@@ -9,22 +9,22 @@ export default function Footer() {
 
           {/* 🔶 Logo & Contact */}
           <div className="col-md-3">
-          <h5 className="edtech-heading">EdTech</h5>
+          <h5 className="edtech-heading">Skill Paradise</h5>
             <ul className="list-unstyled small mt-3">
               <li className="mb-2"><FaEnvelope className="me-2 text-secondary" /> edtech@gmail.com</li>
               <li className="mb-2"><FaPhoneAlt className="me-2 text-secondary" /> +91 91813 23 2309</li>
               <li><FaMapMarkerAlt className="me-2 text-secondary" /> Wagholi, Pune</li>
-            </ul>
+            </ul>       
           </div>
 
           {/* 🏠 Home Links */}
-          <div className="col-md-3">
+          <div className="col-md-3">            
             <h6 className="fw-bold">Home</h6>
             <ul className="list-unstyled small mt-2">
-              <li><a href="#" className="text-decoration-none text-dark d-block mb-1">Benefits</a></li>
-              <li><a href="#" className="text-decoration-none text-dark d-block mb-1">Our Courses</a></li>
-              <li><a href="#" className="text-decoration-none text-dark d-block mb-1">Our Testimonials</a></li>
-              <li><a href="#" className="text-decoration-none text-dark">Our FAQ</a></li>
+              <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Benefits</a></li>
+              <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Our Courses</a></li>
+              <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Our Testimonials</a></li>
+              <li><a href="/" className="text-decoration-none text-dark">Our FAQ</a></li>
             </ul>
           </div>
 
@@ -32,9 +32,9 @@ export default function Footer() {
           <div className="col-md-3">
             <h6 className="fw-bold">About Us</h6>
             <ul className="list-unstyled small mt-2">
-              <li><a href="#" className="text-decoration-none text-dark d-block mb-1">Company</a></li>
-              <li><a href="#" className="text-decoration-none text-dark d-block mb-1">Achievements</a></li>
-              <li><a href="#" className="text-decoration-none text-dark">Our Goals</a></li>
+              <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Company</a></li>
+              <li><a href="/" className="text-decoration-none text-dark d-block mb-1">Achievements</a></li>
+              <li><a href="/" className="text-decoration-none text-dark">Our Goals</a></li>
             </ul>
           </div>
 
@@ -42,13 +42,13 @@ export default function Footer() {
           <div className="col-md-3">
             <h6 className="fw-bold">Social Profiles</h6>
             <div className="d-flex gap-2 mt-2">
-              <a href="#" className="btn btn-light btn-sm rounded-circle">
+              <a href="/" className="btn btn-light btn-sm rounded-circle">
                 <FaFacebookF className="text-orange" />
               </a>
-              <a href="#" className="btn btn-light btn-sm rounded-circle">
+              <a href="/" className="btn btn-light btn-sm rounded-circle">
                 <FaTwitter className="text-orange" />
               </a>
-              <a href="#" className="btn btn-light btn-sm rounded-circle">
+              <a href="/" className="btn btn-light btn-sm rounded-circle">
                 <FaLinkedinIn className="text-orange" />
               </a>
             </div>
@@ -57,7 +57,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center py-3 mt-4 border-top small text-muted">
-          © {new Date().getFullYear()} EdTech. All rights reserved.
+          © {new Date().getFullYear()} Skill Paradise. All rights reserved.
         </div>
       </div>
     </footer>

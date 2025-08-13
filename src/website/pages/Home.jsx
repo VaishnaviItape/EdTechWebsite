@@ -124,7 +124,6 @@ export default function Home() {
 
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     const validationErrors = validate();
 
@@ -143,26 +142,30 @@ export default function Home() {
       });
 
       if (response.ok) {
-        setSubmitStatus('Message sent successfully!');
+        // ✅ Show success alert
+        alert('✅ Message sent successfully!');
+
+        // Reset form
         setFormData({
           firstName: '',
           lastName: '',
           email: '',
-          phoneNumber: '',  // ✅                                                                                                                                     , // changed                            
-          service: '',      // ✅
+          phoneNumber: '',
+          service: '',
           message: '',
           companyName: 'EdTech',
           companyCode: 'EdTech'
         });
 
       } else {
-        setSubmitStatus('Failed to send. Please try again later.');
+        alert('❌ Failed to send. Please try again later.');
       }
     } catch (err) {
       console.error(err);
-      setSubmitStatus('Something went wrong. Please try again.');
+      alert('⚠️ Something went wrong. Please try again.');
     }
   };
+
   const [showDownloadPopup, setShowDownloadPopup] = useState(false);
   const [showFormPopup, setShowFormPopup] = useState(false);
 
@@ -247,7 +250,7 @@ export default function Home() {
   const [mentors, setMentors] = useState([]);
   const [loadingMentors, setLoadingMentors] = useState(true);
   const [errorMentors, setErrorMentors] = useState(null);
-  const token = sessionStorage.getItem("authToken");
+
 
   useEffect(() => {
     const token = sessionStorage.getItem("authToken");  // moved here
