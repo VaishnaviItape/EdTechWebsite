@@ -33,6 +33,7 @@ export default function Home() {
   const handleChangep = (e) => {
     setFormDatap({ ...formDatap, [e.target.name]: e.target.value });
   };
+  const [selectedCourse, setSelectedCourse] = useState("");
 
   const handleSubmitp = async (e) => {
     e.preventDefault();
@@ -85,6 +86,11 @@ export default function Home() {
     }
   };
 
+  const brochureMap = {
+    "Data Analytics": "/brochures/DA.pdf",
+    "SAP": "/brochures/SAP.pdf",
+    "CAD/CAE": "/brochures/CAD.pdf",
+  };
 
   const [formData, setFormData] = useState({
     firstName: '',
@@ -98,7 +104,7 @@ export default function Home() {
   });
   const baseURL = "http://amkore7-001-site1.ltempurl.com";
   const [errors, setErrors] = useState({});
-  const [submitStatus, setSubmitStatus] = useState('');
+  const [submitStatus] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -171,12 +177,23 @@ export default function Home() {
 
 
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = '/brochure.pdf'; // 🔁 Put the correct PDF path here
-    link.download = 'Course-Brochure.pdf';
-    link.click();
-    setShowDownloadPopup(false); // Close popup after download
+    if (!selectedCourse) {
+      alert("⚠️ Please select a course first!");
+      return;
+    }
+
+    const brochure = brochureMap[selectedCourse];
+    if (brochure) {
+      const link = document.createElement("a");
+      link.href = brochure;
+      link.download = `${selectedCourse}-Brochure.pdf`;
+      link.click();
+      setShowDownloadPopup(false);
+    } else {
+      alert("❌ Brochure not available for this course.");
+    }
   };
+
 
 
   // FAQ Data Array
@@ -539,9 +556,13 @@ export default function Home() {
       {showDownloadPopup && (
         <div className="form-popupdownload-wrapper">
           <div className="form-popupdownload">
-            <button className="close-btn" onClick={() => setShowDownloadPopup(false)}>
+            <button
+              className="close-btn"
+              onClick={() => setShowDownloadPopup(false)}
+            >
               &times;
             </button>
+
             <h4 className="form-title">✅ Ready to Learn Something New?</h4>
             <p className="form-subtitle">Get updates, tips & resources!</p>
 
@@ -549,12 +570,16 @@ export default function Home() {
               <input type="text" placeholder="Enter Your Full Name" />
               <input type="text" placeholder="Enter Your Phone No." />
               <input type="email" placeholder="Enter Your Email" />
-              <select>
-                <option>Choose your course</option>
-                <option>Data Analytics</option>
-                <option>SAP</option>
-                <option>CAD/CAE</option>
+              <select
+                value={selectedCourse}
+                onChange={(e) => setSelectedCourse(e.target.value)}
+              >
+                <option value="">Choose your course</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="SAP">SAP</option>
+                <option value="CAD/CAE">CAD/CAE</option>
               </select>
+
             </div>
 
             <div className="form-actions">
